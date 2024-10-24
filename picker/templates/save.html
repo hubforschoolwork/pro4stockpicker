@@ -1,0 +1,73 @@
+
+SLICING
+
+string = "MSFT - 6 = $2712.96"
+# Extracting 'MSFT'
+company = string[:4]
+# Extracting '6'
+quantity = string[7]
+# Extracting '2712.96'
+price = string[11:]
+print(company, quantity, price)  # Output: MSFT 6 2712.96
+
+
+
+Extracting
+
+
+import re
+
+string = "MSFT - 6 = $2712.96"
+pattern = r'(\w+) - (\d+) = \$(\d+\.\d{2})'
+match = re.match(pattern, string)
+if match:
+    company, quantity, price = match.groups()
+    print(company, quantity, price)  # Output: MSFT 6 2712.96
+
+***************************************************************************
+
+
+
+    Sure, let's break down the regular expression pattern `r'(\w+) - (\d+) = \$(\d+\.\d{2})'` step by step:
+
+    ### Regular Expression Breakdown
+    1. **`r'...'`**: The `r` before the string indicates a raw string, which means backslashes are treated literally and not as escape characters. This is useful for regular expressions to avoid having to double escape characters.
+    
+    2. **`(\w+)`**:
+       - **`(` and `)`**: Parentheses are used to capture the matched content as a group.
+       - **`\w`**: Matches any word character (equivalent to `[a-zA-Z0-9_]`).
+       - **`+`**: Matches one or more of the preceding element. So, `\w+` matches one or more word characters.
+       - **`(\w+)`**: This captures a sequence of one or more word characters as a group.
+    
+    3. **` - `**: Matches the literal string " - " (space, hyphen, space).
+    
+    4. **`(\d+)`**:
+       - **`\d`**: Matches any digit (equivalent to `[0-9]`).
+       - **`+`**: Matches one or more of the preceding element. So, `\d+` matches one or more digits.
+       - **`(\d+)`**: This captures a sequence of one or more digits as a group.
+    
+    5. **` = \$`**:
+       - **` = `**: Matches the literal string " = " (space, equals sign, space).
+       - **`\$`**: Matches the literal dollar sign `$`. The backslash is used to escape the dollar sign, which is a special character in regular expressions.
+    
+    6. **`(\d+\.\d{2})`**:
+       - **`\d+`**: Matches one or more digits.
+       - **`\.`**: Matches the literal dot `.`. The backslash is used to escape the dot, which is a special character in regular expressions.
+       - **`\d{2}`**: Matches exactly two digits.
+       - **`(\d+\.\d{2})`**: This captures a sequence of one or more digits followed by a dot and exactly two digits as a group.
+    
+    ### Putting It All Together
+    The pattern `r'(\w+) - (\d+) = \$(\d+\.\d{2})'` matches strings that follow the format "word - number = $number.number", and captures three groups:
+    1. A sequence of word characters (e.g., "MSFT").
+    2. A sequence of digits (e.g., "6").
+    3. A dollar amount with two decimal places (e.g., "2712.96").
+    
+    ### Example
+    For the string `"MSFT - 6 = $2712.96"`, the pattern will match and capture:
+    - Group 1: `"MSFT"`
+    - Group 2: `"6"`
+    - Group 3: `"2712.96"`
+    
+    This allows you to extract these specific parts of the string easily.
+    
+    If you have any more questions or need further clarification, feel free to ask!

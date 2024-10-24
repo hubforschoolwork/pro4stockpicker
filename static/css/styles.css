@@ -1,0 +1,22 @@
+
+
+
+body{
+    background-color:lightslategray;
+
+    
+}
+
+/* styles.css */
+.buylist {
+    color: green; /* Color for the list numbers */
+}
+
+.buylist li {
+    color: blue; /* Color for the list item text */
+}
+
+
+.display_selection {
+    background-color:lightslategray;
+}

@@ -1,0 +1,574 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+{% block title %}Registration Form{% endblock %}
+
+{% block content %}
+
+<h1>Stock - Sell</h1>
+<hr>
+</br>
+
+<br>
+<a href="{% url 'home' %}" class="btn btn-success">Go home</a>
+<br>
+<br>
+
+
+<div class="container">
+    <div class="container-fluid">
+  
+        <div class="row">
+          <div class="col-sm-12 mb-3 mb-sm-5">  
+            <div class="card" style="width: span;">
+              <div class="card-body">
+              <h3 class="card-title">Sell Transactions</h3>
+              <p class="card-text">Maximum selloff of stock portfolio is limited to $5,000.  Once this amount is reached, no other transactions will be processed.</p>
+
+
+
+              <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col-3">Stock/Qty/Price</th>
+                    <th scope="col-6">Total Transaction</th> 
+                 </tr>
+                </thead>
+                <tbody>
+                 {% for value in chosen_items %}
+
+                 <tr>
+                    <td>{{ value }}</td>
+                    <td class="total">{{ value|slice_from_dollar }}</td>
+                 </tr>
+
+                
+                 {% endfor %}
+                </tbody>
+              </table>
+              <br>
+            <strong><div id="sell-running-total">RUNNING TOTAL: $0.00</div></strong>
+              <br>
+              <button type="reset" id="reset-button">Reset</button>
+
+
+            <!-- {% for value in submitted_items %}
+              <p>{{ value }}</p>
+              <p class="total">Total: {{ value|slice_from_dollar }}
+          
+              {% endfor %}
+
+              <br>
+              <p id="running-total">RUNNING TOTAL: $0.00</p>
+              <br> -->
+
+   
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let totals = document.querySelectorAll(".total");
+    let sellrunningTotalElement = document.getElementById("sell-running-total");
+    let sellrunningTotal = 0;
+    const maxTotal = 5000;
+    let alertShown = false;
+    let table = document.querySelector("table");
+    let rowsAdded = new Set();  // Track row indexes to prevent duplicates
+
+    for (let i = 0; i < totals.length; i++) {
+        let amount = parseFloat(totals[i].textContent.replace(/[^0-9.-]+/g, ""));
+
+        // Check if this row has already been added to avoid duplicates
+        if (!rowsAdded.has(i)) {
+            let row = document.createElement("tr");
+            let cell = document.createElement("td");
+
+            // If adding this amount would exceed the limit
+            if (sellrunningTotal + amount > maxTotal) {
+                if (!alertShown) {
+                    alert("Transaction cancelled: You no longer own the required number of stocks to process this transaction.");
+                    alertShown = true;
+                }
+
+                row.style.color = "red";
+                cell.textContent = totals[i].textContent + " (exceeds limit)";
+            } else {
+                sellrunningTotal += amount;
+                cell.textContent = totals[i].textContent;
+                row.style.color = "green";
+                cell.textContent = totals[i].textContent + " (valid transaction)";
+            }
+
+            row.appendChild(cell);
+            table.appendChild(row);
+            rowsAdded.add(i);  // Mark this row as added to avoid duplicates
+        }
+    }
+
+    // Update the running total display
+    sellrunningTotalElement.textContent = "RUNNING TOTAL: $" + sellrunningTotal.toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+});
+//***************************************Thursday
+
+document.getElementById("reset-button").addEventListener("click", function () {
+    // Get the element that shows the running total
+    let sellRunningTotalElement = document.getElementById("sell-running-total");
+    
+    // Reset the running total to 0 if the element exists
+    if (sellRunningTotalElement) {
+        sellRunningTotalElement.textContent = "RUNNING TOTAL: $0.00";
+    } else {
+        console.error("Running total element not found!");
+    }
+    
+    // Clear the table body by removing all rows
+    let tbody = document.querySelector("table tbody"); // Assuming your table has a <tbody> tag
+    if (tbody) {
+        tbody.innerHTML = ""; // This clears all rows inside the table body
+    } else {
+        console.error("Table body not found!");
+    }
+
+
+
+
+
+
+
+
+
+// document.getElementById("reset-button").addEventListener("click", function () {
+//     let sellrunningTotalElement = document.getElementById("sell-running-total");
+//     let sellrunningTotal = 0;
+//     sellrunningTotalElement.textContent = "RUNNING TOTAL: $0.00";
+
+//     // Clear the table by removing all rows including the headers
+//     let tbody = document.querySelector("table tbody");
+//     tbody.innerHTML = "";  // This removes all rows, including headers if desired
+
+
+// *************
+// Clear the table by removing specific rows
+    let table = document.querySelector("table");
+    let rows = table.querySelectorAll("tr");  // Select all rows in the table
+
+    rows.forEach(function(row, index) {
+        if (row.textContent.includes("exceeds limit") || row.textContent.includes("valid transaction")) {
+            table.deleteRow(index);  // Remove the specific row
+        }
+    });
+
+// ***************
+
+    // Reset any other relevant states or flags as necessary
+    alertShown = false;  // Reset alert variable if it's used elsewhere
+});
+
+</script>
+
+<!-- ********************9/24/2024
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    let totals = document.querySelectorAll(".total");
+    let sellrunningTotalElement = document.getElementById("sell-running-total");
+    let sellrunningTotal = 0;
+    const maxTotal = 5000;
+    let alertShown = false;
+    let table = document.querySelector("table");
+    let rowsAdded = new Set();  // Track row indexes to prevent duplicates
+
+    for (let i = 0; i < totals.length; i++) {
+        let amount = parseFloat(totals[i].textContent.replace(/[^0-9.-]+/g, ""));
+
+        // Check if this row has already been added to avoid duplicates
+        if (!rowsAdded.has(i)) {
+            let row = document.createElement("tr");
+            let cell = document.createElement("td");
+
+            // If adding this amount would exceed the limit
+            if (sellrunningTotal + amount > maxTotal) {
+                if (!alertShown) {
+                    alert("Transaction cancelled: You no longer own the required number of stocks to process this transaction.");
+                    alertShown = true;
+                }
+
+                // Mark this row visually (red) to indicate it exceeds the limit
+                row.style.color = "red";
+                cell.textContent = totals[i].textContent + " (exceeds limit)";
+            } else {
+                // Add valid transactions to the running total and table
+                sellrunningTotal += amount;
+                cell.textContent = totals[i].textContent;
+
+                row.style.color = "green";
+                cell.textContent = totals[i].textContent + " (valid transaction)";
+
+            }
+
+            row.appendChild(cell);
+            table.appendChild(row);
+            rowsAdded.add(i);  // Mark this row as added to avoid duplicates
+        }
+    }
+
+    // Update the running total display
+    sellrunningTotalElement.textContent = "Running Total: $" + sellrunningTotal.toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+});
+
+//**************************************************************************
+
+document.getElementById("reset-button").addEventListener("click", function () {
+    let sellrunningTotalElement = document.getElementById("running-total");
+    sellrunningTotal = 0;
+    sellrunningTotalElement.textContent = "Running Total: $0.00";
+
+    // Reset totals to $0.00
+    document.querySelectorAll(".total").forEach(function (total) {
+        total.textContent = "$0.00";
+    });
+
+    // Remove dynamically created rows from the table
+    let rows = document.querySelectorAll("table tr");
+    rows.forEach(function (row) {
+        if (!row.querySelector(".total")) {  // Ensure headers/static rows are not removed
+            row.remove();
+        }
+    });
+
+    // Reset the added rows tracker and alert flag
+    rowsAdded.clear();
+    alertShown = false;
+
+
+});
+
+
+</script> -->
+
+<br>
+<br>
+<br>
+<br>
+{% endblock %}
+
+
+    <!-- <ol>
+        {% for item in submitted_items %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ol> -->
+</br>
+</br>
+
+<!-- <ol>
+    {% with total=0 %}
+        {% for item in submitted_items %}
+            <li>{{ item }}</li>
+            {% with total=total|add:item %}
+            {% endwith %}
+        {% endfor %}
+    {% endwith %}
+</ol>
+
+<p>Total: {{ total }}</p> -->
+
+<br>
+<br>
+
+<!-- <ol> -->
+<!-- {% for value in submitted_items %}
+    <p>{{ value }}</p>
+    <p class="total">Total: {{ value|slice_from_dollar }}
+
+{% endfor %} -->
+<!-- </ol> -->
+
+
+<!-- {% for value in submitted_items %}
+<p class="total">Total: {{ value|slice_from_dollar }}</p>
+
+<br>
+{% endfor %} -->
+<br>
+<!-- <p id="running-total">Running Total: $0.00</p> -->
+<br>
+
+
+<!-- <script>
+document.addEventListener("DOMContentLoaded", function () {
+    let totals = document.querySelectorAll(".total");
+    let runningTotalElement = document.getElementById("running-total");
+    let runningTotal = 0;
+    const maxTotal = 5000;
+    let alertShown = false;
+    let rowsAdded = new Set();  // Track rows that have already been added
+
+    for (let i = 0; i < totals.length; i++) {
+        let amount = parseFloat(totals[i].textContent.replace(/[^0-9.-]+/g, ""));
+        
+        // Stop processing if we're above the limit
+        if (runningTotal + amount > maxTotal) {
+            if (!alertShown) {
+                alert("Transaction cancelled: Adding this amount would exceed the maximum allowed balance of $5,000.");
+                alertShown = true;
+            }
+            break; // Stop any further processing
+        }
+
+        // Avoid adding the same row multiple times
+        if (!rowsAdded.has(i)) {
+            runningTotal += amount;
+            rowsAdded.add(i); // Mark this row as added
+
+            // Add row for this amount
+            // let row = document.createElement("tr");
+            // let cell = document.createElement("td");
+            // cell.textContent = totals[i].textContent;
+            // row.appendChild(cell);
+            // document.querySelector("table").appendChild(row);
+        }
+    }
+
+    runningTotalElement.textContent = "Running Total: $" + runningTotal.toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+});
+
+document.getElementById("reset-button").addEventListener("click", function () {
+    let runningTotalElement = document.getElementById("running-total");
+    runningTotal = 0;
+    runningTotalElement.textContent = "Running Total: $0.00";
+
+    // Reset totals back to $0.00
+    document.querySelectorAll(".total").forEach(function (total) {
+        total.textContent = "$0.00";
+    });
+
+    // Remove dynamically created rows (only rows added to the table dynamically)
+    let rows = document.querySelectorAll("table tr");
+    rows.forEach(function (row) {
+        if (!row.querySelector(".total")) {  // Ensures it doesn't remove any headers or static rows
+            row.remove();
+        }
+    });
+
+    // Reset the tracker for rows added and the alert flag
+    rowsAdded.clear(); // Clear the set to allow for fresh additions
+    alertShown = false;
+});
+
+
+</script> -->
+
+
+
+<!-- <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let totals = document.querySelectorAll(".total");
+        let runningTotalElement = document.getElementById("running-total");
+        let runningTotal = 0;
+        const maxTotal = 5000;
+        let alertShown = false;
+
+
+        for (let i = 0; i < totals.length; i++) {
+            let amount = parseFloat(totals[i].textContent.replace(/[^0-9.-]+/g, ""));
+
+            if (runningTotal + amount > maxTotal) {
+                if (!alertShown) {
+                    alert("Transaction cancelled: Adding this amount would exceed the maximum allowed balance of $5,000.");
+                    alertShown = true; 
+                }
+  
+                break;
+            }
+
+            runningTotal += amount;
+
+            let row = document.createElement("tr");
+            let cell = document.createElement("td");
+            cell.textContent = totals[i].textContent;
+            row.appendChild(cell);
+            document.querySelector("table").appendChild(row);
+
+        }          
+        
+        runningTotalElement.textContent = "Running Total: $" + runningTotal.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    });
+
+
+    document.getElementById("reset-button").addEventListener("click", function() {
+        runningTotal = 0;
+        runningTotalElement.textContent = "Running Total: $0.00";
+
+        // Reset totals and clear rows
+        document.querySelectorAll(".total").forEach(function (total) {
+            total.textContent = "$0.00";
+        });
+
+
+
+        // totals.forEach(function(total) {
+        //     total.textContent = "$0.00";
+        // });
+
+        let rows = document.querySelectorAll("table tr");
+        rows.forEach(function(row) {
+            if (!row.querySelector(".total")) {
+                row.remove();
+            }
+        });
+
+        alertShown = false;
+
+    });
+
+</script> -->
+
+
+
+<!-- 
+// 9/16/2024
+    document.addEventListener("DOMContentLoaded", function() {
+        let totals = document.querySelectorAll(".total");
+        let runningTotalElement = document.getElementById("running-total");
+        let runningTotal = 0;
+        const maxTotal = 5000;
+        let alertShown = false;
+
+
+        for (let i = 0; i < totals.length; i++) {
+            let amount = parseFloat(totals[i].textContent.replace(/[^0-9.-]+/g, ""));
+
+            if (runningTotal + amount > maxTotal) {
+                if (!alertShown) {
+                    alert("Transaction cancelled: Adding this amount would exceed the maximum allowed balance of $5,000.");
+                    alertShown = true; 
+                }   
+                break;
+            }
+
+            runningTotal += amount;
+            let row = document.createElement("tr");
+            let cell = document.createElement("td");
+            cell.textContent = totals[i].textContent;
+            row.appendChild(cell);
+            document.querySelector("table").appendChild(row);
+
+        }          
+        
+        runningTotalElement.textContent = "Running Total: $" + runningTotal.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    });
+
+
+    document.getElementById("reset-button").addEventListener("click", function() {
+        runningTotal = 0;
+        runningTotalElement.textContent = "Running Total: $0.00";
+
+        totals.forEach(function(total) {
+            total.textContent = "$0.00";
+        });
+
+        let rows = document.querySelectorAll("table tr");
+        rows.forEach(function(row) {
+            if (!row.querySelector(".total")) {
+                row.remove();
+            }
+        });
+
+        alertShown = false;
+
+    }); -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- EXTRA*************** -->
+
+
+
+<!-- // let totals = document.querySelectorAll(".total");
+// totals.forEach(function(total) {
+//     total.textContent = "$0.00";
+// });
+
+// let rows = document.querySelectorAll("tr");
+// rows.forEach(function(row) {
+//     if (!row.querySelector(".total")) {
+//         row.innerHTML = "";
+//     }
+// }); -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <p id="total">Total: {{ value|slice:"-8:" }}</p> -->
+
+<!-- <p id="total">Total: {{ value|slice:"-8:" }}</p> -->
+
+
+
+
+
+<!-- 
+<ol>
+    {% for value in submitted_items %}
+        <p>{{ value }}</p>
+    {% endfor %}
+    </ol>
+    
+    <p id="total">Total:</p> -->
+
+
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let totals = document.querySelectorAll(".total");
+            let runningTotalElement = document.getElementById("running-total");
+            let runningTotal = 0;
+    
+            totals.forEach(function(total) {
+                let amount = parseFloat(total.textContent.replace(/[^0-9.-]+/g, ""));
+                runningTotal += amount;
+            });
+    
+            runningTotalElement.textContent = "Running Total: $" + runningTotal.toFixed(2);
+        });
+    </script>
+     -->

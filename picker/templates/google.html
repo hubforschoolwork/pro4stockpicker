@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %}Google{% endblock %}
+
+
+{% block content %}
+<h1>Google - Historical Data</h1>
+
+
+
+
+
+  <h1>1-Year Chart</h1>
+  <a href="{% url 'home' %}" class="btn btn-success">Go home</a>
+  <a href="{% url 'historical_data' %}" class="btn btn-success">Go back</a>
+</br>
+</br>
+
+  <img src="{% static 'images/goog/goog - 1 - yr.jpg' %}" alt="">
+
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<a id="goog"></a>
+<h1>Google - Historical Data</h1>
+  <h1>5-Year Chart</h1>
+  <a href="{% url 'home' %}" class="btn btn-success">Go home</a>
+  <a href="{% url 'historical_data' %}" class="btn btn-success">Go back</a>
+</br>
+</br>
+  <img src="{% static 'images/goog/goog - 5 yr.jpg' %}" alt="">
+</br>
+</br>
+</br>
+
+
+
+
+{% endblock %}
+
+<script>
+    
+</script>
+
+

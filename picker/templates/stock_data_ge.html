@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %}General Electric{% endblock %}
+
+
+{% block content %}
+<h1>General Electric - Stock Data</h1>
+<hr>
+
+
+
+
+
+
+  <h1>1-Day Chart</h1>
+  <a href="{% url 'home' %}" class="btn btn-success">Go home</a>
+  <a href="{% url 'stock_data' %}" class="btn btn-success">Go back</a>
+</br>
+</br>
+  <img src="{% static 'images/ge/GE - daily.jpg' %}" alt="">
+
+
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+
+
+{% endblock %}
+
+<script>
+    
+</script>
+
+

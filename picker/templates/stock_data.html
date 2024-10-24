@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Stock Data{% endblock %}
+
+
+
+
+
+{% block content %}
+
+<h1>Stock Data</h1>
+<hr>
+
+</br>
+<h5>Click on button to view current stock data.</h5>
+</br>
+
+
+<div class="container">
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 mb-3 mb-sm-5">  
+        <div class="card text-center border-black" style="width: span; height: 15rem;">
+          <h3 class="card-title mt-3">Current Portfolio</h3>
+        </br>
+          <p class="card-text">View current stock data for positions in your portfolio.</p>
+        </br>
+          <div class="card-body mb-3 mt-3" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 35px; text-align:">
+            <!-- <h5 class="card-title">Current Portfolio</h5>
+          </br>
+            <p class="card-text">View current stock data for positions in your portfolio.</p> -->
+
+
+            <a href= "{% url 'stock_data_amazon' %}" button type="submit" class="btn btn-success btn-lg">Amazon</button></a>
+            <a href= "{% url 'stock_data_ge' %}" button type="submit" class="btn btn-success btn-lg">General Electric</button></a>
+            <a href= "{% url 'stock_data_google' %}" button type="submit" class="btn btn-success btn-lg">Google</button></a>
+            <a href= "{% url 'stock_data_microsoft' %}" button type="submit" class="btn btn-success btn-lg">Microsoft</button> </a>           
+
+          </div>
+
+    
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+    
+
+
+</br>
+</br>
+
+<a href="{% url 'home' %}" class="btn btn-success">Go home</a>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
