@@ -3,8 +3,8 @@
 
 
 {% block content %}
-<center><h1>Welcome to Stock Picker</h1></center>
-<center><h5>Your Place to Buy and Sell Stocks</h5></center>
+<h1 class="home-title text-center">Welcome to Stock Picker</h1>
+<h5 class="home-title-2 text-center">Your Place to Buy and Sell Stocks</h5>
 </br>
 
 
@@ -13,50 +13,48 @@
 
 <div class="row">
   <div class="col-sm-6 mb-3 mb-sm-5">  
-    <div class="card" style="width: 35rem;">
+    <div class="card border-black" style="width: 35rem;">
       <div class="card-body">
         <h5 class="card-title">Current Portfolio</h5>
         <p class="card-text">View details regarding the current positions in your stock portfolio.</p>
-        <a href= "{% url 'item_portfolio' %}" class="btn btn-success">Go To Current Portfolio</a>
+        <a href= "{% url 'item_portfolio' %}" class="btn btn-success border-black">Go To Current Portfolio</a>
 
       </div>
     </div>
   </div>
 
   <div class="col-sm-6">
-    <div class="card" style="width: 35rem;">
+    <div class="card border-black" style="width: 35rem;">
         <div class="card-body">
           <h5 class="card-title">Transaction History</h5>
           <p class="card-text">View details on buy and sell transactions in your portfolio.</p>
-          <a href= "{% url 'transaction_history' %}" class="btn btn-success">Go To Transaction History</a>     
+          <a href= "{% url 'transaction_history' %}" class="btn btn-success border-black">Go To Transaction History</a>     
         </div>
     </div>
   </div>
 
   <div class="col-sm-6">
-    <div class="card" style="width: 35rem;">
+    <div class="card border-black" style="width: 35rem;">
         <div class="card-body">
           <h5 class="card-title">Stock Data - Pricing</h5>
           <p class="card-text">View stock data in your portfolio.</p>
-          <a href= "{% url 'stock_data' %}" class="btn btn-success">Go To Stock Data</a>
+          <a href= "{% url 'stock_data' %}" class="btn btn-success border-black">Go To Stock Data</a>
         </div>
     </div>
   </div>
 
   <div class="col-sm-6">
-    <div class="card" style="width: 35rem;">
+    <div class="card border-black" style="width: 35rem;">
         <div class="card-body">
           <h5 class="card-title">Historical Data - Charts</h5>
           <p class="card-text">View historical data for a particular stock in your portfolio.</p>
-          <a href= "{% url 'historical_data' %}" class="btn btn-success">Go To Historical Data</a>
+          <a href= "{% url 'historical_data' %}" class="btn btn-success border-black">Go To Historical Data</a>
         </div>
     </div>
   </div>
 </div>
 
 </div>
-
-
 
 
 </br>
@@ -66,22 +64,22 @@
 
   <div class="row">
     <div class="col-6 mb-3 mb-sm-5">  
-      <div class="card" style="width: 35rem;">
+      <div class="card border-black" style="width: 35rem;">
         <div class="card-body">
           <h5 class="card-title">Select An Action</h5>
           <p class="card-text">Click on a button to buy or sell a stock.</p>
-          <a href= "{% url 'add_portfolio' %}" class="btn btn-danger">Buy</a>
-          <a href= "{% url 'delete_portfolio' %}" class="btn btn-danger">Sell</a>
+          <a href= "{% url 'add_portfolio' %}" class="btn btn-danger border-black">Buy</a>
+          <a href= "{% url 'delete_portfolio' %}" class="btn btn-danger border-black">Sell</a>
         </div>
       </div>           
     </div>
 
     <div class="col-sm-6">
-      <div class="card" style="width: 35rem;">
+      <div class="card border-black" style="width: 35rem;">
           <div class="card-body">
             <h5 class="card-title">Historical Data - Charts</h5>
             <p class="card-text">View historical data for a particular stock in your portfolio.</p>
-            <a href= "{% url 'historical_data' %}" class="btn btn-success">Go To Historical Data</a>
+            <a href= "{% url 'historical_data' %}" class="btn btn-success border-black">Go To Historical Data</a>
           </div>
       </div>
     </div>

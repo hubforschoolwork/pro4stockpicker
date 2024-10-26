@@ -4,9 +4,6 @@
 {% block title %}Stock Data{% endblock %}
 
 
-
-
-
 {% block content %}
 
 <h1>Stock Data</h1>
@@ -26,16 +23,16 @@
         </br>
           <p class="card-text">View current stock data for positions in your portfolio.</p>
         </br>
-          <div class="card-body mb-3 mt-3" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 35px; text-align:">
+          <div class="card-body mb-3 mt-3" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 35px; text-align;">
             <!-- <h5 class="card-title">Current Portfolio</h5>
           </br>
             <p class="card-text">View current stock data for positions in your portfolio.</p> -->
 
 
-            <a href= "{% url 'stock_data_amazon' %}" button type="submit" class="btn btn-success btn-lg">Amazon</button></a>
-            <a href= "{% url 'stock_data_ge' %}" button type="submit" class="btn btn-success btn-lg">General Electric</button></a>
-            <a href= "{% url 'stock_data_google' %}" button type="submit" class="btn btn-success btn-lg">Google</button></a>
-            <a href= "{% url 'stock_data_microsoft' %}" button type="submit" class="btn btn-success btn-lg">Microsoft</button> </a>           
+            <a href= "{% url 'stock_data_amazon' %}" button type="submit" class="btn btn-success btn-lg border-black">Amazon</button></a>
+            <a href= "{% url 'stock_data_ge' %}" button type="submit" class="btn btn-success btn-lg border-black">General Electric</button></a>
+            <a href= "{% url 'stock_data_google' %}" button type="submit" class="btn btn-success btn-lg border-black">Google</button></a>
+            <a href= "{% url 'stock_data_microsoft' %}" button type="submit" class="btn btn-success btn-lg border-black">Microsoft</button> </a>           
 
           </div>
 
@@ -51,7 +48,7 @@
 </br>
 </br>
 
-<a href="{% url 'home' %}" class="btn btn-success">Go home</a>
+<a href="{% url 'home' %}" class="btn btn-success border-black">Go home</a>
 
 
 
