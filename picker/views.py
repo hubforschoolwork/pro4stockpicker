@@ -78,9 +78,6 @@ def transaction_history(request):
 def delete_portfolio(request):
     return render(request, 'delete_portfolio.html', {})
 
-def test(request):
-    return render(request, 'test.html', {})
-
 def registrationform(request):
     return render(request, 'registrationform.html', {})
 
@@ -152,13 +149,11 @@ class AddPortfolioView(CreateView):
     template_name = 'add_portfolio.html'
     # fields = '__all__'
 
-
 class DeletePortfolioView(CreateView):
     model = DeletePortfolio
     form_class = DeletePortfolioForm
     template_name = 'delete_portfolio.html'
     # fields = '__all__'
-
 
 class HistoryView(CreateView):
     model = History
@@ -166,13 +161,11 @@ class HistoryView(CreateView):
     template_name = 'historical_data.html'
     # fields = '__all__'
 
-
 class StockDataView(CreateView):
     model = StockData
     form_class = StockDataForm
     template_name = 'stock_data.html'
     # fields = 'stock'
-
 
 class TransactionHistoryView(ListView):
     model = TransactionHistory
