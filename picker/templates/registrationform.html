@@ -51,7 +51,12 @@
 
               <button type="reset" id="reset-button">Reset</button>
 
- 
+
+              
+              <!-- <button id="clearTableBtn">Clear Table</button> -->
+
+              <button type="reset" button id="clearTableBtn">Clear Table</button>
+
             </div>
           </div>
         </div>
@@ -114,6 +119,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 let rowsAdded = new Set();
 
+
+//RESET BUTTON//
+
 document.getElementById("reset-button").addEventListener("click", function () {
     let runningTotalElement = document.getElementById("running-total");
     runningTotal = 0;
@@ -152,7 +160,30 @@ document.getElementById("reset-button").addEventListener("click", function () {
     }
 });
 
+//******************************************************
+//******************************************************
 
+// document.getElementById('clearTableBtn').addEventListener('click', function() {
+
+// // Optionally clear the session in Django
+
+// fetch('{% url "submitted_items" %}', {
+
+//     method: 'POST',
+
+//     headers: {
+
+//         'X-CSRFToken': '{{ csrf_token }}'
+
+//     }
+
+// });
+
+// // Clear the table body
+
+// document.querySelector('#choicesTable tbody').innerHTML = '';
+
+// });
 
 </script>
 
