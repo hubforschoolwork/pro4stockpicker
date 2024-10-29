@@ -59,117 +59,145 @@
 </div>
 
 
-
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    let totals = document.querySelectorAll(".total");
-    let sellrunningTotalElement = document.getElementById("sell-running-total");
-    let sellrunningTotal = 0;
-    const maxTotal = 5000;
-    let alertShown = false;
-    let table = document.querySelector("table");
-    let rowsAdded = new Set();  // Track row indexes to prevent duplicates
-
-    for (let i = 0; i < totals.length; i++) {
-        let amount = parseFloat(totals[i].textContent.replace(/[^0-9.-]+/g, ""));
-
-        // Check if this row has already been added to avoid duplicates
-        if (!rowsAdded.has(i)) {
-            let row = document.createElement("tr");
-            let cell = document.createElement("td");
-
-            // If adding this amount would exceed the limit
-            if (sellrunningTotal + amount > maxTotal) {
-                if (!alertShown) {
-                    alert("Transaction cancelled: You no longer own the required number of stocks to process this transaction.");
-                    alertShown = true;
-                }
-
-                row.style.color = "red";
-                cell.textContent = totals[i].textContent + " (exceeds limit)";
-            } else {
-                sellrunningTotal += amount;
-                cell.textContent = totals[i].textContent;
-                row.style.color = "green";
-                cell.textContent = totals[i].textContent + " (valid transaction)";
-            }
-
-            row.appendChild(cell);
-            table.appendChild(row);
-            rowsAdded.add(i);  // Mark this row as added to avoid duplicates
+// Function to calculate the running total
+function calculateRunningTotal() {
+    let totalSum = 0;
+    // Select all elements with the class 'total' which contains the total transaction values
+    const totals = document.querySelectorAll('.total');
+  
+    // Iterate over the NodeList and sum the values
+    totals.forEach(total => {
+        // Parse the text content as a float (remove dollar sign and parse to float)
+        const value = parseFloat(total.textContent.replace('$', '').replace(',', ''));
+        if (!isNaN(value)) {
+            totalSum += value; // Only add valid numbers
         }
-    }
+    });
 
     // Update the running total display
-    sellrunningTotalElement.textContent = "RUNNING TOTAL: $" + sellrunningTotal.toLocaleString("en-US", {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    });
+    document.getElementById('sell-running-total').textContent = `RUNNING TOTAL: $${totalSum.toFixed(2)}`;
+}
+
+// Event listener to calculate the running total on page load
+window.addEventListener('DOMContentLoaded', (event) => {
+    calculateRunningTotal(); // Calculate total when the page is loaded
 });
 
-
-//***************************************Thursday
-
-
-
-document.getElementById("reset-button").addEventListener("click", function () {
-    // Get the element that shows the running total
-    let sellRunningTotalElement = document.getElementById("sell-running-total");
+// Event listener for the reset button
+document.getElementById('reset-button').addEventListener('click', function() {
+    // Clear the table body
+    const tbody = document.querySelector('tbody');
     
-    // Reset the running total to 0 if the element exists
-    if (sellRunningTotalElement) {
-        sellRunningTotalElement.textContent = "RUNNING TOTAL: $0.00";
-    } else {
-        console.error("Running total element not found!");
-    }
-    
-    // Clear the table body by removing all rows
-    let tbody = document.querySelector("table tbody"); // Assuming your table has a <tbody> tag
-    if (tbody) {
-        tbody.innerHTML = ""; // This clears all rows inside the table body
-    } else {
-        console.error("Table body not found!");
-    }
+    // Remove all rows from tbody
+    tbody.innerHTML = '';
 
+    // Reset the running total display
+    document.getElementById('sell-running-total').textContent = 'RUNNING TOTAL:';
+
+
+    // Reset totals to $0.00
+    document.querySelectorAll(".total").forEach(function (total) {
+        total.textContent = "$0.00";
+    });
+    // Reset totals to $0.00
+    // Clear the rowsAdded set
+    rowsAdded.clear();
+
+});  
+
+</script>
+{% endblock %}
+
+
+
+
+<!-- 
+// OLD
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     let totals = document.querySelectorAll(".total");
+//     let sellrunningTotalElement = document.getElementById("sell-running-total");
+//     let sellrunningTotal = 0;
+//     const maxTotal = 5000;
+//     let alertShown = false;
+//     let table = document.querySelector("table");
+//     let rowsAdded = new Set();  // Track row indexes to prevent duplicates
+
+//     for (let i = 0; i < totals.length; i++) {
+//         let amount = parseFloat(totals[i].textContent.replace(/[^0-9.-]+/g, ""));
+
+//         // Check if this row has already been added to avoid duplicates
+//         if (!rowsAdded.has(i)) {
+//             let row = document.createElement("tr");
+//             let cell = document.createElement("td");
+
+//             // If adding this amount would exceed the limit
+//             if (sellrunningTotal + amount > maxTotal) {
+//                 if (!alertShown) {
+//                     alert("Transaction cancelled: You no longer own the required number of stocks to process this transaction.");
+//                     alertShown = true;
+//                 }
+
+//                 row.style.color = "red";
+//                 cell.textContent = totals[i].textContent + " (exceeds limit)";
+//             } else {
+//                 sellrunningTotal += amount;
+//                 cell.textContent = totals[i].textContent;
+//                 row.style.color = "green";
+//                 cell.textContent = totals[i].textContent + " (valid transaction)";
+//             }
+
+//             row.appendChild(cell);
+//             table.appendChild(row);
+//             rowsAdded.add(i);  // Mark this row as added to avoid duplicates
+//         }
+//     }
+
+//     // Update the running total display
+//     sellrunningTotalElement.textContent = "RUNNING TOTAL: $" + sellrunningTotal.toLocaleString("en-US", {
+//         minimumFractionDigits: 2,
+//         maximumFractionDigits: 2
+//     });
+// });
+
+
+// //***************************************Thursday
 
 
 
 // document.getElementById("reset-button").addEventListener("click", function () {
-//     let sellrunningTotalElement = document.getElementById("sell-running-total");
-//     let sellrunningTotal = 0;
-//     sellrunningTotalElement.textContent = "RUNNING TOTAL: $0.00";
-
-//     // Clear the table by removing all rows including the headers
-//     let tbody = document.querySelector("table tbody");
-//     tbody.innerHTML = "";  // This removes all rows, including headers if desired
-
-
-
-
-
-// *************
-// Clear the table by removing specific rows
-    let table = document.querySelector("table");
-    let rows = table.querySelectorAll("tr");  // Select all rows in the table
-
-    rows.forEach(function(row, index) {
-        if (row.textContent.includes("exceeds limit") || row.textContent.includes("valid transaction")) {
-            table.deleteRow(index);  // Remove the specific row
-        }
-    });
-
-    // Reset any other relevant states or flags as necessary
-    alertShown = false;  // Reset alert variable if it's used elsewhere
-});
+//     // Get the element that shows the running total
+//     let sellRunningTotalElement = document.getElementById("sell-running-total");
+    
+//     // Reset the running total to 0 if the element exists
+//     if (sellRunningTotalElement) {
+//         sellRunningTotalElement.textContent = "RUNNING TOTAL: $0.00";
+//     } else {
+//         console.error("Running total element not found!");
+//     }
+    
+//     // Clear the table body by removing all rows
+//     let tbody = document.querySelector("table tbody"); // Assuming your table has a <tbody> tag
+//     if (tbody) {
+//         tbody.innerHTML = ""; // This clears all rows inside the table body
+//     } else {
+//         console.error("Table body not found!");
+//     }
 
 
+// // *************
+// // Clear the table by removing specific rows
+//     let table = document.querySelector("table");
+//     let rows = table.querySelectorAll("tr");  // Select all rows in the table
 
+//     rows.forEach(function(row, index) {
+//         if (row.textContent.includes("exceeds limit") || row.textContent.includes("valid transaction")) {
+//             table.deleteRow(index);  // Remove the specific row
+//         }
+//     });
 
-
-</script>
-
-
-
-
-{% endblock %}
+//     // Reset any other relevant states or flags as necessary
+//     alertShown = false;  // Reset alert variable if it's used elsewhere
+// }); -->
 
