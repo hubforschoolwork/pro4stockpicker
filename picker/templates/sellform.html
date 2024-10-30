@@ -58,49 +58,33 @@
     </div>
 </div>
 
-
 <script>
-// Function to calculate the running total
+
 function calculateRunningTotal() {
     let totalSum = 0;
+    // Define the maximum limit for the running total
     const maxTotal = 5000;
 
     // Select all elements with the class 'total' which contains the total transaction values
     const totals = document.querySelectorAll('.total');
-  
+
     // Iterate over the NodeList and sum the values
     totals.forEach(total => {
         // Parse the text content as a float (remove dollar sign and parse to float)
         const value = parseFloat(total.textContent.replace('$', '').replace(',', ''));
         if (!isNaN(value)) {
+            // Check if adding this value exceeds the maximum total allowed
             if (totalSum + value <= maxTotal) {
-            totalSum += value; // Only add valid numbers
-        }
-        else {
-            totalSum = maxTotal; // Set totalSum to maxTotal if limit is reached     
-        }
+                totalSum += value; // Only add valid numbers that do not exceed the limit
+            } else {
+                totalSum = maxTotal; // Set totalSum to maxTotal if limit is reached
+            }
         }
     });
 
     // Update the running total display
     document.getElementById('sell-running-total').textContent = `RUNNING TOTAL: $${totalSum.toFixed(2)}`;
 }
-
-// Check if the totalSum exceeds or equals $5000
-    if (totalSum >= maxTotal) {
-        disableTransactionSubmission(); // Call function to disable transaction submission
-    }
-
-// Function to disable transaction submission
-function disableTransactionSubmission() {
-    const submitButton = document.getElementById('submit-button'); // Adjust based on your submit button's ID
-    submitButton.disabled = true; // Disable the submit button
-    submitButton.textContent = "Transaction Limit Reached"; // Optional: Change button text
-}
-
-
-
-
 
 // Event listener to calculate the running total on page load
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -118,45 +102,25 @@ document.getElementById('reset-button').addEventListener('click', function() {
     // Reset the running total display
     document.getElementById('sell-running-total').textContent = 'RUNNING TOTAL:';
 
-
     // Reset totals to $0.00
     document.querySelectorAll(".total").forEach(function (total) {
         total.textContent = "$0.00";
     });
 
- // Enable transaction submission again
-    const submitButton = document.getElementById('submit-button');
-    submitButton.disabled = false; // Re-enable the button
-    submitButton.textContent = "Submit Transaction"; // Reset button text
-
+    // Clear the rowsAdded set
+    rowsAdded.clear();
 });
 
-// Example code to handle the transaction submission (adjust based on your form handling)
-document.getElementById('form-id').addEventListener('submit', function(evt) {
-    const totals = document.querySelectorAll('.total');
-    let totalSum = 0;
 
-    totals.forEach(total => {
-        const value = parseFloat(total.textContent.replace('$', '').replace(',', ''));
-        if (!isNaN(value)) {
-            totalSum += value; // Accumulate total from elements
-
-    }
-
-});
-
-    if (totalSum >= 5000) {
-        evt.preventDefault(); // Prevent the form submission if the limit is reached
-        alert("Transaction limit of $5,000 reached. No further transactions can be processed."); // Alert the user
-
-}
-    // // Reset totals to $0.00
-    // // Clear the rowsAdded set
-    // rowsAdded.clear();
-
-});  
 
 </script>
+
+
+
+
+
+
+
 {% endblock %}
 
 
