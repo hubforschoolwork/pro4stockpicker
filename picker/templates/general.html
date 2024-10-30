@@ -9,14 +9,15 @@
 {% block content %}
 <h1>General Electric - Historical Data</h1>
 
+<h1>1-Year Chart</h1>
 
-
-
-  <h1>1-Year Chart</h1>
+<div class="d-flex justify-content-end gap-2">
   <a href="{% url 'home' %}" class="btn btn-success border-black">Go home</a>
   <a href="{% url 'historical_data' %}" class="btn btn-success border-black">Go back</a>
+  </div>
+
 </br>
-</br>
+
   <img src="{% static 'images/ge/ge - 1 yr.jpg' %}" alt="">
 
 
@@ -30,11 +31,15 @@
 <a id="GE"></a>
 <h1>General Electric - Historical Data</h1>
   <h1>5-Year Chart</h1>
+
+  <div class="d-flex justify-content-end gap-2">
   <a href="{% url 'home' %}" class="btn btn-success border-black">Go home</a>
   <a href="{% url 'historical_data' %}" class="btn btn-success border-black">Go back</a>
+  </div>
+
 </br>
-</br>
-  <img src="{% static 'images/ge/ge - 5 yr.jpg' %}" alt="">
+
+<img src="{% static 'images/ge/ge - 5 yr.jpg' %}" alt="">
 </br>
 </br>
 </br>

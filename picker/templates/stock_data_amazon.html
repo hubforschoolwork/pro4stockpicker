@@ -9,20 +9,14 @@
 {% block content %}
 <h1>Amazon - Stock Data</h1>
 <hr>
-
-
-
-
-
-
-  <h1>1-Day Chart</h1>
-
-  <div class="d-flex justify-content-end">
+<div class="d-flex justify-content-end gap-2">
   <a href="{% url 'home' %}" class="btn btn-success border-black">Go home</a>
   <a href="{% url 'stock_data' %}" class="btn btn-success border-black">Go back</a>
   </div>
 
-<br>
+  <h1>1-Day Chart</h1>
+
+
   <img src="{% static 'images/amzn/amazon - daily.jpg' %}" alt="">
 
 
