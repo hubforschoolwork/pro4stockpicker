@@ -58,11 +58,14 @@
     </div>
 </div>
 
+
 <script>
 
 function calculateRunningTotal() {
     let totalSum = 0;
     const maxTotal = 5000;
+    const overLimit = 'Exceeds $5,000';
+
 
     const totals = document.querySelectorAll('.total');
 
@@ -73,7 +76,9 @@ function calculateRunningTotal() {
             if (totalSum + value <= maxTotal) {
                 totalSum += value;
             } else {
-                totalSum = maxTotal;
+                // totalSum = maxTotal;
+                overLimit;
+
             }
         }
     });
@@ -98,7 +103,6 @@ document.getElementById('reset-button').addEventListener('click', function() {
 
     rowsAdded.clear();
 });
-
 
 </script>
 
