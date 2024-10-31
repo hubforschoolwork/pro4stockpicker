@@ -64,11 +64,10 @@
 function calculateRunningTotal() {
     let totalSum = 0;
     const maxTotal = 5000;
-    const overLimit = 'Exceeds Limit';
+    let alertShown = false;
 
 
     const totals = document.querySelectorAll('.total');
-
 
     totals.forEach(total => {
         const value = parseFloat(total.textContent.replace('$', '').replace(',', ''));
@@ -76,13 +75,18 @@ function calculateRunningTotal() {
             if (totalSum + value <= maxTotal) {
                 totalSum += value;
             } else {
-                // totalSum = maxTotal;
-                console.log(overLimit);
+                totalSum = maxTotal;
             }
         }
     });
 
     document.getElementById('sell-running-total').textContent = `RUNNING TOTAL: $${totalSum.toFixed(2)}`;
+
+    if (totalSum >= maxTotal &&!alertShown) {
+        alert("Maximum selling total reached. No more transactions will be processed.");
+        alertShown = true;
+    }
+
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {
