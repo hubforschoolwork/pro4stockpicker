@@ -64,7 +64,7 @@
 function calculateRunningTotal() {
     let totalSum = 0;
     const maxTotal = 5000;
-    const overLimit = 'Exceeds $5,000';
+    const overLimit = 'Exceeds Limit';
 
 
     const totals = document.querySelectorAll('.total');
@@ -77,8 +77,7 @@ function calculateRunningTotal() {
                 totalSum += value;
             } else {
                 // totalSum = maxTotal;
-                overLimit;
-
+                console.log(overLimit);
             }
         }
     });
