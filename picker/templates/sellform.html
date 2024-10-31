@@ -62,52 +62,40 @@
 
 function calculateRunningTotal() {
     let totalSum = 0;
-    // Define the maximum limit for the running total
     const maxTotal = 5000;
 
-    // Select all elements with the class 'total' which contains the total transaction values
     const totals = document.querySelectorAll('.total');
 
-    // Iterate over the NodeList and sum the values
+
     totals.forEach(total => {
-        // Parse the text content as a float (remove dollar sign and parse to float)
         const value = parseFloat(total.textContent.replace('$', '').replace(',', ''));
         if (!isNaN(value)) {
-            // Check if adding this value exceeds the maximum total allowed
             if (totalSum + value <= maxTotal) {
-                totalSum += value; // Only add valid numbers that do not exceed the limit
+                totalSum += value;
             } else {
-                totalSum = maxTotal; // Set totalSum to maxTotal if limit is reached
+                totalSum = maxTotal;
             }
         }
     });
 
-    // Update the running total display
     document.getElementById('sell-running-total').textContent = `RUNNING TOTAL: $${totalSum.toFixed(2)}`;
 }
 
-// Event listener to calculate the running total on page load
 window.addEventListener('DOMContentLoaded', (event) => {
-    calculateRunningTotal(); // Calculate total when the page is loaded
+    calculateRunningTotal();
 });
 
-// Event listener for the reset button
 document.getElementById('reset-button').addEventListener('click', function() {
-    // Clear the table body
     const tbody = document.querySelector('tbody');
     
-    // Remove all rows from tbody
     tbody.innerHTML = '';
 
-    // Reset the running total display
     document.getElementById('sell-running-total').textContent = 'RUNNING TOTAL:';
 
-    // Reset totals to $0.00
     document.querySelectorAll(".total").forEach(function (total) {
         total.textContent = "$0.00";
     });
 
-    // Clear the rowsAdded set
     rowsAdded.clear();
 });
 
