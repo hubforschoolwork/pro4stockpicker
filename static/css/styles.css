@@ -21,11 +21,3 @@ body{
 }
 
 
-.left-image {
-    width: 20%; /* Adjust this value for desired size */
-    height: auto; /* Keeps the aspect ratio */
-    float: left; /* Aligns the image to the left */
-    margin-right: 20px; /* Optional: add space between the image and the next element */
-    max-width: 50px;
-}
-
