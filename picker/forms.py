@@ -1,5 +1,5 @@
 from django import forms
-from .models import ItemPortfolio, AddPortfolio, DeletePortfolio, StockData, History, TransactionHistory
+from .models import AddPortfolio, DeletePortfolio, StockData, History
 
 
 
@@ -67,19 +67,6 @@ class registrationform(forms.Form):
     name = forms.CharField()
     email = forms.EmailField()
     message = forms.CharField(widget=forms.Textarea)
-
-
-class ItemPortfolioForm(forms.ModelForm):
-    class Meta:
-        model = ItemPortfolio
-        fields = ('stock', 'quantity', 'current_total_value', 'current_price')
-
-        widgets = {
-            'stock': forms.TextInput(attrs={'class': 'form-control'}),
-            'quantity': forms.NumberInput(attrs={'class': 'form-control'}),
-            'current_total_value': forms.NumberInput(attrs={'class': 'form-control'}),
-            'current_price': forms.NumberInput(attrs={'class': 'form-control'}),            
-        }
 
 
 class AddPortfolioForm(forms.ModelForm):

@@ -3,8 +3,8 @@ from django.views.generic import ListView, CreateView, DeleteView
 # from picker.templatetags.custom_filters import extract_number
 
 
-from .models import ItemPortfolio, AddPortfolio, DeletePortfolio, StockData, History, TransactionHistory, General
-from .forms import ItemPortfolioForm, AddPortfolioForm, DeletePortfolioForm,StockDataForm,HistoryForm
+from .models import AddPortfolio, DeletePortfolio, StockData, History, General
+from .forms import AddPortfolioForm, DeletePortfolioForm,StockDataForm,HistoryForm
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
@@ -63,17 +63,11 @@ def home(request):
 def sellform(request):
     return render(request, 'sellform.html', {})
 
-def item_portfolio(request):
-    return render(request, 'item_portfolio.html', {})
-
 def historical_data(request):
     return render(request, 'historical_data.html', {})
 
 def stock_data(request):
     return render(request, 'stock_data.html', {})
-
-def transaction_history(request):
-    return render(request, 'transaction_history.html', {})
 
 def delete_portfolio(request):
     return render(request, 'delete_portfolio.html', {})
@@ -137,12 +131,6 @@ class GeneralView(CreateView):
     template_name = 'general.html'
     # fields = '__all__'
 
-class ItemPortfolioView(ListView):
-    model = ItemPortfolio
-    form_class = ItemPortfolioForm
-    template_name = 'item_portfolio.html'
-    fields = '__all__'
-
 class AddPortfolioView(CreateView):
     model = AddPortfolio
     form_class = AddPortfolioForm
@@ -166,11 +154,4 @@ class StockDataView(CreateView):
     form_class = StockDataForm
     template_name = 'stock_data.html'
     # fields = 'stock'
-
-class TransactionHistoryView(ListView):
-    model = TransactionHistory
-    form_class = TransactionHistory
-    template_name = 'transaction_history.html'
-    ordering = ['-id']
-
 

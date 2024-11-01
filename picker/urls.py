@@ -1,15 +1,13 @@
 from django.urls import path
 from . import views
-from .views import ItemPortfolioView, AddPortfolioView, DeletePortfolioView, HistoryView, StockDataView, TransactionHistoryView, GeneralView, AmazonView, MicrosoftView, GoogleView, Stock_Data_AmazonView, display_selection
+from .views import AddPortfolioView, DeletePortfolioView, HistoryView, StockDataView, GeneralView, AmazonView, MicrosoftView, GoogleView, Stock_Data_AmazonView, display_selection
 from .views import display_selection, display_sells, sellform
 
 
 
 urlpatterns = [
     path('', views.home, name="home"),
-    path('item_portfolio', ItemPortfolioView.as_view(), name='item_portfolio'),
     path('stock_data', StockDataView.as_view(), name='stock_data'),
-    path('transaction_history', TransactionHistoryView.as_view(), name='transaction_history'),
     path('historical_data', HistoryView.as_view(), name='historical_data'),
     path('add_portfolio', AddPortfolioView.as_view(), name='add_portfolio'),
     path('delete_portfolio', DeletePortfolioView.as_view(), name='delete_portfolio'),
