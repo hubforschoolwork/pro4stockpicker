@@ -54,6 +54,8 @@ def display_sells(request):
 
 
 
+def test(request):
+    return render(request, 'test.html', {})
 
 
 
