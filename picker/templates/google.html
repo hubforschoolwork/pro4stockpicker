@@ -7,38 +7,46 @@
 
 
 {% block content %}
-<h1>Google - Historical Data</h1>
 
+<div class="d-flex justify-content-between align-items-center">
+  <h1 class="mb-0">Google - Historical Data</h1>
+    <div>
+      <a href="{% url 'home' %}" class="btn btn-success border-black">Go home</a>
+      <a href="{% url 'historical_data' %}" class="btn btn-success border-black">Go back</a> 
+    </div>
+</div>
 
-<h1>1-Year Chart</h1>
-
-  <div class="d-flex justify-content-end gap-2">
-  <a href="{% url 'home' %}" class="btn btn-success border-black">Go home</a>
-  <a href="{% url 'historical_data' %}" class="btn btn-success border-black">Go back</a>
-  </div>
-</br>
-
-  <img src="{% static 'images/goog/goog - 1 - yr.jpg' %}" alt="">
-
-
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-<a id="goog"></a>
-<h1>Google - Historical Data</h1>
+<hr>
 
   <h1>5-Year Chart</h1>
+</br>  
+  <!-- <img src="{% static 'images/amzn/amzn - 1 - yr.jpg' %}" alt=""> -->
 
-  <div class="d-flex justify-content-end gap-2">
-  <a href="{% url 'home' %}" class="btn btn-success border-black">Go home</a>
-  <a href="{% url 'historical_data' %}" class="btn btn-success border-black">Go back</a>
-  </div>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="d-flex justify-content-center"> 
+  <div class="col-9 mb-3 mb-sm-5">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+  {
+  "symbol": "NASDAQ:GOOG",
+  "width": "100%",
+  "height": "200%",
+  "locale": "en",
+  "dateRange": "60M",
+  "colorTheme": "light",
+  "isTransparent": false,
+  "autosize": true,
+  "largeChartUrl": ""
+}
+  </script>
+</div>
+</div>
+</div>
+<!-- TradingView Widget END -->
 </br>
-
-  <img src="{% static 'images/goog/goog - 5 yr.jpg' %}" alt="">
+</br>
+</br>
 </br>
 </br>
 </br>
