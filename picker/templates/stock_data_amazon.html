@@ -7,20 +7,111 @@
 
 
 {% block content %}
-<h1>Amazon - Stock Data</h1>
+
+<div class="d-flex justify-content-between align-items-center">
+  <h1 class="mb-0">Amazon - Stock Data</h1>
+    <div>
+      <a href="{% url 'home' %}" class="btn btn-success border-black">Go home</a>
+      <a href="{% url 'stock_data' %}" class="btn btn-success border-black">Go back</a> 
+    </div>
+</div>
+
 <hr>
-<div class="d-flex justify-content-end gap-2">
-  <a href="{% url 'home' %}" class="btn btn-success border-black">Go home</a>
-  <a href="{% url 'stock_data' %}" class="btn btn-success border-black">Go back</a>
-  </div>
 
-  <h1>1-Day Chart</h1>
+<h1>1-Day Chart</h1>
+</br>
+
+  <!-- <img src="{% static 'images/amzn/amazon - daily.jpg' %}" alt=""> -->
+
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="d-flex justify-content-center"> 
+  <div class="col-9">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+  {
+  "symbol": "NASDAQ:AMZN",
+  "width": "100%",
+  "height": "200%",
+  "locale": "en",
+  "dateRange": "1D",
+  "colorTheme": "light",
+  "isTransparent": false,
+  "autosize": true,
+  "largeChartUrl": ""
+}
+  </script>
+</div>
+</div>
+</div>
+<!-- TradingView Widget END -->
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
 
 
-  <img src="{% static 'images/amzn/amazon - daily.jpg' %}" alt="">
+
+<!-- TradingView Widget BEGIN -->
+
+<!-- <div class="tradingview-widget-container">
+  <div class="d-flex justify-content-center"> 
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
+  {
+  "symbols": [
+    [
+      "NASDAQ:AMZN|1D"
+    ]
+  ],
+  "chartOnly": false,
+  "width": "75%",
+  "height": "100%",
+  "locale": "en",
+  "colorTheme": "light",
+  "autosize": false,
+  "showVolume": false,
+  "showMA": false,
+  "hideDateRanges": false,
+  "hideMarketStatus": false,
+  "hideSymbolLogo": false,
+  "scalePosition": "right",
+  "scaleMode": "Normal",
+  "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+  "fontSize": "10",
+  "noTimeScale": false,
+  "valuesTracking": "1",
+  "changeMode": "price-and-percent",
+  "chartType": "area",
+  "maLineColor": "#2962FF",
+  "maLineWidth": 1,
+  "maLength": 9,
+  "headerFontSize": "medium",
+  "lineWidth": 2,
+  "lineType": 0,
+  "dateRanges": [
+    "1d|1",
+    "1m|30",
+    "3m|60",
+    "12m|1D",
+    "60m|1W",
+    "all|1M"
+  ]
+}
+  </script>
+</div>
+</div> -->
 
 
 
 
+<!-- TradingView Widget END -->
+</br>
+</br>
+</br>
+</br>
 {% endblock %}
 
