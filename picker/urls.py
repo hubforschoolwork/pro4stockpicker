@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 from .views import AddPortfolioView, DeletePortfolioView, HistoryView, StockDataView, GeneralView, AmazonView, MicrosoftView, GoogleView, Stock_Data_AmazonView, display_selection
-from .views import display_selection, display_sells, sellform, test
+from .views import display_selection, display_sells, sellform, test, test4charts
 
 
 
@@ -24,6 +24,7 @@ urlpatterns = [
     path('display_sells/', display_sells, name='display_sells'),
     path('sellform', sellform, name='sellform'),
     path('test', test, name='test'),
+    path('test4charts', test4charts, name='test4charts'),
 ]
 
 

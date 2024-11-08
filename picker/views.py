@@ -57,6 +57,9 @@ def display_sells(request):
 def test(request):
     return render(request, 'test.html', {})
 
+def test4charts(request):
+    return render(request, 'test4charts.html', {})
+
 
 
 def home(request):
