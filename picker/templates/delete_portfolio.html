@@ -28,40 +28,41 @@
 
     <div class="col">
       <div class="card border-black" style="width: 15rem;">
-        <img src="{% static 'images/amzn/amznprimelogo1.jpg' %}" class="card-img-top img-fluid" style="height: 12rem;" alt="...">
+        <img src="{% static 'images/amzn/amznprimelogo1.jpg' %}" class="card-img-top img-fluid" style="height: 12rem;"
+          alt="...">
         <div class="card-body">
           <h4 class="card-title">Amazon</h4>
-          <p class="card-text"><strong>Stock Price:  $193.61</strong></p>
+          <p class="card-text"><strong>Stock Price: $193.61</strong></p>
 
-        </p>
+          </p>
 
-<form method="POST" action="{% url 'display_sells' %}">
-  {% csrf_token %}
-  <input list="datalistAmzn" name="sells_item" placeholder="Choose an item...">
-  <br>
+          <form method="POST" action="{% url 'display_sells' %}">
+            {% csrf_token %}
+            <input list="datalistAmzn" name="sells_item" placeholder="Choose an item...">
+            <br>
 
-<datalist id="datalistAmzn">
-  <option value="AMZN - 1 = $193.61">
-  <option value="AMZN - 2 = $387.22">
-  <option value="AMZN - 3 = $580.83">
-  <option value="AMZN - 4 = $774.44">
-  <option value="AMZN - 5 = $968.05">
-  <option value="AMZN - 6 = $1,161.66">
-  <option value="AMZN - 7 = $1,355.27">
-  <option value="AMZN - 8 = $1,548.88">
-  <option value="AMZN - 9 = $1,742.49">
-  <option value="AMZN - 10 = $1,936.10">
-</datalist>
-</p>     
-<br>
-  <button type="submit">Submit</button>        
-</form>
+            <datalist id="datalistAmzn">
+              <option value="AMZN - 1 = $193.61">
+              <option value="AMZN - 2 = $387.22">
+              <option value="AMZN - 3 = $580.83">
+              <option value="AMZN - 4 = $774.44">
+              <option value="AMZN - 5 = $968.05">
+              <option value="AMZN - 6 = $1,161.66">
+              <option value="AMZN - 7 = $1,355.27">
+              <option value="AMZN - 8 = $1,548.88">
+              <option value="AMZN - 9 = $1,742.49">
+              <option value="AMZN - 10 = $1,936.10">
+            </datalist>
+            </p>
+            <br>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<br>
-<br>
+    <br>
+    <br>
 
 
 <!-- **************************************MICROSOFT**************************** -->
@@ -71,30 +72,30 @@
     <img src="{% static 'images/msft/microsoftbldglogo.jpg' %}" class="card-img-top" style="height: 12rem" alt="...">
     <div class="card-body">
       <h4 class="card-title">Microsoft</h4>
-      <p class="card-text"><strong>Stock Price:  $452.16</strong></p>
+      <p class="card-text"><strong>Stock Price: $452.16</strong></p>
 
-</p>
-  <form method="POST" action="{% url 'display_sells' %}">
-    {% csrf_token %}
-    <input list="datalistMsft" name="sells_item" placeholder="Choose an item...">
-    <br>
-  <datalist id="datalistMsft">
-    <option value="MSFT - 1 = $452.16">
-    <option value="MSFT - 2 = $904.32">
-    <option value="MSFT - 3 = $1,356.48">
-    <option value="MSFT - 4 = $1,808.64">
-    <option value="MSFT - 5 = $2,260.80">
-    <option value="MSFT - 6 = $2,712.96">
-    <option value="MSFT - 7 = $3,165.12">
-    <option value="MSFT - 8 = $3,617.28">
-    <option value="MSFT - 9 = $4,069.44">
-    <option value="MSFT - 10 = $4,521.60">
-  </datalist>
+      </p>
+      <form method="POST" action="{% url 'display_sells' %}">
+        {% csrf_token %}
+        <input list="datalistMsft" name="sells_item" placeholder="Choose an item...">
+        <br>
+        <datalist id="datalistMsft">
+          <option value="MSFT - 1 = $452.16">
+          <option value="MSFT - 2 = $904.32">
+          <option value="MSFT - 3 = $1,356.48">
+          <option value="MSFT - 4 = $1,808.64">
+          <option value="MSFT - 5 = $2,260.80">
+          <option value="MSFT - 6 = $2,712.96">
+          <option value="MSFT - 7 = $3,165.12">
+          <option value="MSFT - 8 = $3,617.28">
+          <option value="MSFT - 9 = $4,069.44">
+          <option value="MSFT - 10 = $4,521.60">
+        </datalist>
 
-</p>    
-<br>
-  <button type="submit">Submit</button>        
-</form>
+        </p>
+        <br>
+        <button type="submit">Submit</button>
+      </form>
     </div>
   </div>
 </div>
@@ -105,81 +106,82 @@
   <!-- **************************************GE*****************************************   -->
 
   <div class="col">
-  <div class="card border-black" style="width: 15rem;">
-    <img src="{% static 'images/ge/gebldg.jpg' %}" class="card-img-top" style="height: 12rem" alt="...">
-    <div class="card-body">
-      <h4 class="card-title">General Electric</h4>
-      <p class="card-text"><strong>Stock Price:  $160.64</strong></p>
-
-    </p>
+    <div class="card border-black" style="width: 15rem;">
+      <img src="{% static 'images/ge/gebldg.jpg' %}" class="card-img-top" style="height: 12rem" alt="...">
+      <div class="card-body">
+        <h4 class="card-title">General Electric</h4>
+        <p class="card-text"><strong>Stock Price: $160.64</strong></p>
   
-    <form method="POST" action="{% url 'display_sells' %}">
-      {% csrf_token %}
-      <input list="datalistGe" name="sells_item" placeholder="Choose an item...">
-      <br>
- 
-    
-    <datalist id="datalistGe">
-      <option value="GE - 1 = $160.64">
-      <option value="GE - 2 = $321.28">
-      <option value="GE - 3 = $481.92">
-      <option value="GE - 4 = $642.56">
-      <option value="GE - 5 = $803.20">
-      <option value="GE - 6 = $963.84">
-      <option value="GE - 7 = $1,124.48">
-      <option value="GE - 8 = $1,285.12">
-      <option value="GE - 9 = $1,445.76">
-      <option value="GE - 10 = $1,606.40">
-    </datalist>
-  </p>
-  <br>
-  <button type="submit">Submit</button>        
-</form>
+        </p>
+  
+        <form method="POST" action="{% url 'display_sells' %}">
+          {% csrf_token %}
+          <input list="datalistGe" name="sells_item" placeholder="Choose an item...">
+          <br>
+  
+  
+          <datalist id="datalistGe">
+            <option value="GE - 1 = $160.64">
+            <option value="GE - 2 = $321.28">
+            <option value="GE - 3 = $481.92">
+            <option value="GE - 4 = $642.56">
+            <option value="GE - 5 = $803.20">
+            <option value="GE - 6 = $963.84">
+            <option value="GE - 7 = $1,124.48">
+            <option value="GE - 8 = $1,285.12">
+            <option value="GE - 9 = $1,445.76">
+            <option value="GE - 10 = $1,606.40">
+          </datalist>
+          </p>
+          <br>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   </div>
-</div>
 
 <!-- ********************************GOOGLE******************************** -->
 
 <br>
-<br> 
+<br>
+
 <div class="col">
   <div class="card border-black" style="width: 15rem;">
     <img src="{% static 'images/goog/googlelogo.jpg' %}" class="card-img-top" style="height: 12rem" alt="...">
     <div class="card-body">
-      <h4 class="card-title" id = "google">Google</h4>
-      <p class="card-text"><strong>Stock Price:  $185.37</strong></p>
-  </p>
-</p>
+      <h4 class="card-title" id="google">Google</h4>
+      <p class="card-text"><strong>Stock Price: $185.37</strong></p>
+      </p>
+      </p>
 
 
-<form method="POST" action="{% url 'display_sells' %}">
-  {% csrf_token %}
-  <input list="datalistGoog" name="sells_item" placeholder="Choose an item...">
-  <br>
- 
-  <datalist id="datalistGoog">
-    <option value="GOOG - 1 = $185.37">
-    <option value="GOOG - 2 = $370.74">
-    <option value="GOOG - 3 = $556.11">
-    <option value="GOOG - 4 = $741.48">
-    <option value="GOOG - 5 = $926.85">
-    <option value="GOOG - 6 = $1,112.22">
-    <option value="GOOG - 7 = $1,297.59">
-    <option value="GOOG - 8 = $1,482.96">
-    <option value="GOOG - 9 = $1,668.33">
-    <option value="GOOG - 10 = $1,853.70">
-  </datalist>
-   </p>
-  <br>
-  <button type="submit">Submit</button>
-</form>
+      <form method="POST" action="{% url 'display_sells' %}">
+        {% csrf_token %}
+        <input list="datalistGoog" name="sells_item" placeholder="Choose an item...">
+        <br>
+
+        <datalist id="datalistGoog">
+          <option value="GOOG - 1 = $185.37">
+          <option value="GOOG - 2 = $370.74">
+          <option value="GOOG - 3 = $556.11">
+          <option value="GOOG - 4 = $741.48">
+          <option value="GOOG - 5 = $926.85">
+          <option value="GOOG - 6 = $1,112.22">
+          <option value="GOOG - 7 = $1,297.59">
+          <option value="GOOG - 8 = $1,482.96">
+          <option value="GOOG - 9 = $1,668.33">
+          <option value="GOOG - 10 = $1,853.70">
+        </datalist>
+        </p>
+        <br>
+        <button type="submit">Submit</button>
+      </form>
 
     </div>
   </div>
 </div>
 
-  </div>
+</div>
 </div>
 </container>
 

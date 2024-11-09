@@ -18,34 +18,36 @@
 
 
 <div class="container">
-    <div class="container-fluid">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-12 mb-3 mb-sm-5">  
+      <div class="col-sm-12 mb-3 mb-sm-5">
         <div class="card text-center border-black" style="width: span; height: 15rem;">
           <h3 class="card-title mt-3">Current Portfolio</h3>
-        </br>
+          </br>
           <p class="card-text">View current stock data for positions in your portfolio.</p>
-        </br>
-          <div class="card-body mb-3 mt-3" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 35px; text-align: center">
+          </br>
+          <div class="card-body mb-3 mt-3"
+            style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 35px; text-align: center">
             <!-- <h5 class="card-title">Current Portfolio</h5>
           </br>
             <p class="card-text">View current stock data for positions in your portfolio.</p> -->
 
 
-            <a href= "{% url 'stock_data_amazon' %}" button type="submit" class="btn btn-success btn-lg border-black">Amazon</button></a>
-            <a href= "{% url 'stock_data_ge' %}" button type="submit" class="btn btn-success btn-lg border-black">General Electric</button></a>
-            <a href= "{% url 'stock_data_google' %}" button type="submit" class="btn btn-success btn-lg border-black">Google</button></a>
-            <a href= "{% url 'stock_data_microsoft' %}" button type="submit" class="btn btn-success btn-lg border-black">Microsoft</button> </a>           
+            <a href="{% url 'stock_data_amazon' %}" button type="submit"
+              class="btn btn-success btn-lg border-black">Amazon</button></a>
+            <a href="{% url 'stock_data_ge' %}" button type="submit" class="btn btn-success btn-lg border-black">General
+              Electric</button></a>
+            <a href="{% url 'stock_data_google' %}" button type="submit"
+              class="btn btn-success btn-lg border-black">Google</button></a>
+            <a href="{% url 'stock_data_microsoft' %}" button type="submit"
+              class="btn btn-success btn-lg border-black">Microsoft</button> </a>
 
-          </div>
-
-    
           </div>
         </div>
       </div>
     </div>
+  </div>
 </div>
-    
 
 
 </br>

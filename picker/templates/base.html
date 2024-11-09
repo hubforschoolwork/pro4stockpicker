@@ -33,110 +33,116 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'home' %}">Stock Picker</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
+    
             <li class="nav-item">
-                  <a class="nav-link" href="{% url 'historical_data' %}">Historical Data</a>
+              <a class="nav-link" href="{% url 'historical_data' %}">Historical Data</a>
             </li>
-
+    
             <li class="nav-item">
               <a class="nav-link" href="{% url 'stock_data' %}">Stock Data</a>
             </li>
-
+    
             <li class="nav-item">
               <a class="nav-link" href="{% url 'add_portfolio' %}">Buy</a>
             </li>
-
+    
             <li class="nav-item">
               <a class="nav-link" href="{% url 'delete_portfolio' %}">Sell</a>
-            </li>  
-
+            </li>
+    
             <li class="nav-item">
               <a class="nav-link" href="{% url 'registrationform' %}">Reg Form</a>
             </li>
-
+    
             <li class="nav-item"></li>
-              <a class="nav-link" href="{% url 'sellform' %}">Sell Form</a>
+            <a class="nav-link" href="{% url 'sellform' %}">Sell Form</a>
             </li>
-
+    
             <li class="nav-item"></li>
-              <a class="nav-link" href="{% url 'test' %}">Test</a>
+            <a class="nav-link" href="{% url 'test' %}">Test</a>
             </li>
-
+    
             <li class="nav-item"></li>
-              <a class="nav-link" href="{% url 'test4charts' %}">test4charts</a>
+            <a class="nav-link" href="{% url 'test4charts' %}">test4charts</a>
             </li>
-
-
+    
+    
           </ul>
         </div>
 
 
+<div class="d-flex align-items-center">
+  <span class="text-danger me-2">Live Quotes:</span>
+  <a href="https://finance.yahoo.com/quote/AMZN/" target="_blank" rel="noopener noreferrer"
+    class="btn btn-outline-success me-2">AMZN</a>
+  <a href="https://finance.yahoo.com/quote/GE/" target="_blank" rel="noopener noreferrer"
+    class="btn btn-outline-primary me-2">GE</a>
+  <a href="https://finance.yahoo.com/quote/GOOG/" target="_blank" rel="noopener noreferrer"
+    class="btn btn-outline-danger me-2">GOOG</a>
+  <a href="https://finance.yahoo.com/quote/MSFT/" target="_blank" rel="noopener noreferrer"
+    class="btn btn-outline-info me-2">MSFT</a>
+</div>
 
-          <div class="d-flex align-items-center">
-            <span class="text-danger me-2">Live Quotes:</span>
-            <a href="https://finance.yahoo.com/quote/AMZN/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success me-2">AMZN</a>
-            <a href="https://finance.yahoo.com/quote/GE/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary me-2">GE</a>
-            <a href="https://finance.yahoo.com/quote/GOOG/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger me-2">GOOG</a>
-            <a href="https://finance.yahoo.com/quote/MSFT/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-info me-2">MSFT</a>
-        </div>
+
+</div>
+</div>
+</nav>
+
+</br>
 
 
-        </div>
-      </div>
-    </nav>
-
-  </br>
  <!-- //start ticker here// -->
 
- <div class="tradingview-widget-container">
-  <div class="d-flex justify-content-center"> 
-  <div class="col-9">
-  <div class="tradingview-widget-container__widget"></div>
-    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-  {
-  "symbols": [
-    {
-      "description": "S&P500",
-      "proName": "SP:SPX"
-    },
-    {
-      "description": "Nasdaq",
-      "proName": "NASDAQ:NDX"
-    },
+<div class="tradingview-widget-container">
+  <div class="d-flex justify-content-center">
+    <div class="col-9">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+        async>
+          {
+            "symbols": [
+              {
+                "description": "S&P500",
+                "proName": "SP:SPX"
+              },
+              {
+                "description": "Nasdaq",
+                "proName": "NASDAQ:NDX"
+              },
 
-    {
-      "description": "NYSE",
-      "proName": "USI:TICK"
-    },
-    {
-      "description": "DAX",
-      "proName": "XETR:DAX"
-    },
-    {
-      "description": "CAC",
-      "proName": "TVC:CAC40"
-    },
-    {
-      "description": "FTSE",
-      "proName": "SPREADEX:FTSE"
-    }
-  ],
-  "showSymbolLogo": true,
-  "isTransparent": false,
-  "displayMode": "adaptive",
-  "colorTheme": "dark",
-  "locale": "en"
-}
-  </script>
+              {
+                "description": "NYSE",
+                "proName": "USI:TICK"
+              },
+              {
+                "description": "DAX",
+                "proName": "XETR:DAX"
+              },
+              {
+                "description": "CAC",
+                "proName": "TVC:CAC40"
+              },
+              {
+                "description": "FTSE",
+                "proName": "SPREADEX:FTSE"
+              }
+            ],
+              "showSymbolLogo": true,
+                "isTransparent": false,
+                  "displayMode": "adaptive",
+                    "colorTheme": "dark",
+                      "locale": "en"
+          }
+        </script>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-
 
 
 
@@ -145,15 +151,15 @@
 <div class="container">
   <div class="main-wrapper">
     <div class="row">
-        <div class="col-12">
+      <div class="col-12">
 
 {% block content %}
 
 {% endblock %}
 
-        </div>
       </div>
     </div>
+  </div>
 </div>
 
 

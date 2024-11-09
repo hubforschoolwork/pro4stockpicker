@@ -18,63 +18,59 @@
 
 </br>
 
-
 <div class="container">
-  <!-- <div class="row"> -->
-    <div class="row justify-content-center">
-    <!-- <div class="row text-center">  -->
-      <!-- <div class="col-6 mb-sm-3"> -->
-          <div class="col-md-3 mb-3">
-        <div class="card border-black" style="width: 25rem;">
-          <div class="card border-black">
-           <div class="card-body">
+  <div class="row">
+    <div class="row text-center">
+      <div class="col-6 mb-3 mb-sm-3">
+        <div class="card border-black" style="width: 35rem;">
+          <div class="card-body">
             <h5 class="card-title">GE - Chart Data</h5>
             <p class="card-text">Click on button to view chart.</p>
-            <a href= "{% url 'general' %}" class="btn btn-danger border-black">5-yr chart</a>  
+            <a href="{% url 'general' %}" class="btn btn-danger border-black">5-yr chart</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 mb-sm-8">
+        <div class="card border-black" style="width: 35rem;">
+          <div class="card-body">
+            <h5 class="card-title">Amazon - Chart Data</h5>
+            <p class="card-text">Click on button to view chart.</p>
+            <a href="{% url 'amazon' %}" class="btn btn-danger border-black">5-yr chart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="row text-center">
+      <div class="col-6 mb-3 mb-sm-3">
+        <div class="card border-black" style="width: 35rem;">
+          <div class="card-body">
+            <h5 class="card-title">Microsoft - Chart Data</h5>
+            <p class="card-text">Click on button to view chart.</p>
+            <a href="{% url 'microsoft' %}" class="btn btn-danger border-black">5-yr chart</a>
           </div>
         </div>
       </div>
 
 
-          <!-- <div class="col-6"> -->
-            <div class="col-md-3 mb-3">
-            <div class="card border-black" style="width: 25rem;">
-              <div class="card border-black">
-              <div class="card-body">
-                <h5 class="card-title">Amazon - Chart Data</h5>
-                <p class="card-text">Click on button to view chart.</p>
-                <a href= "{% url 'amazon' %}" class="btn btn-danger border-black">5-yr chart</a>   
-              </div>
-            </div>
-         </div>
-</div>
-</div>   
-
-<div class="container">
-  <div class="row">
-    <div class="row text-center"> 
-      <div class="col-6 mb-3 mb-sm-3">
-            <div class="card border-black" style="width: 35rem;">
-              <div class="card-body">
-                <h5 class="card-title">Microsoft - Chart Data</h5>
-                <p class="card-text">Click on button to view chart.</p>
-                <a href= "{% url 'microsoft' %}" class="btn btn-danger border-black">5-yr chart</a>  
-              </div>
-            </div>
+      <div class="col-6 mb-sm-8">
+        <div class="card border-black" style="width: 35rem;">
+          <div class="card-body">
+            <h5 class="card-title">Google - Chart Data</h5>
+            <p class="card-text">Click on button to view chart.</p>
+            <a href="{% url 'google' %}" class="btn btn-danger border-black">5-yr chart</a>
           </div>
-
-
-          <div class="col-6 mb-sm-8">
-            <div class="card border-black" style="width: 35rem;">
-              <div class="card-body">
-                <h5 class="card-title">Google - Chart Data</h5>
-                <p class="card-text">Click on button to view chart.</p>
-                <a href= "{% url 'google' %}" class="btn btn-danger border-black">5-yr chart</a>  
-              </div>
-            </div>
-          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
+</div>
 
 </br>
 </br>

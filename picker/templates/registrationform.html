@@ -9,9 +9,9 @@
 <div class="d-flex justify-content-between align-items-center">
     <h1 class="mb-0">Stock - Buy</h1>
     <a href="{% url 'home' %}" class="btn btn-success border-black">Go home</a>
-  </div>
-  
-  <hr>
+</div>
+
+<hr>
 
 <br>
 <br>
@@ -19,44 +19,47 @@
 
 <div class="container">
     <div class="container-fluid">
-  
+
         <div class="row">
-          <div class="col-sm-12 mb-3 mb-sm-5">  
-            <div class="card border-black" style="width: span;">
-              <div class="card-body">
-              <h3 class="card-title">Buy Transactions</h3>
-              <p class="card-text">Stock purchase maximum is limited to $5,000 in total transactions.  Once this amount is reached, no other transactions will be processed.</p>
+            <div class="col-sm-12 mb-3 mb-sm-5">
+                <div class="card border-black" style="width: span;">
+                    <div class="card-body">
+                        <h3 class="card-title">Buy Transactions</h3>
+                        <p class="card-text">Stock purchase maximum is limited to $5,000 in total transactions. Once
+                            this amount is reached, no other transactions will be processed.</p>
 
-              <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col-3">Stock/Qty/Price</th>
-                    <th scope="col-6">Total Transaction</th> 
-                 </tr>
-                </thead>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col-3">Stock/Qty/Price</th>
+                                    <th scope="col-6">Total Transaction</th>
+                                </tr>
+                            </thead>
 
-                 {% for value in submitted_items %}
+                            {% for value in submitted_items %}
 
-                 <tr>
-                    <td>{{ value }}</td>
-                    <td class="total">{{ value|slice_from_dollar }}</td>
-                 </tr>
+                            <tr>
+                                <td>{{ value }}</td>
+                                <td class="total">{{ value|slice_from_dollar }}</td>
+                            </tr>
 
-                
-                 {% endfor %}
 
-              </table>
-              <br>
-            <strong><p id="running-total">RUNNING TOTAL: $0.00</p></strong>
-              <br>
+                            {% endfor %}
 
-              <button type="reset" id="reset-button">Reset</button>
-              
-             </div>
-          </div>
+                        </table>
+                        <br>
+                        <strong>
+                            <p id="running-total">RUNNING TOTAL: $0.00</p>
+                        </strong>
+                        <br>
+
+                        <button type="reset" id="reset-button">Reset</button>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-  </div>
 
 
   
