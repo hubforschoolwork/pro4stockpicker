@@ -61,7 +61,6 @@ def test4charts(request):
     return render(request, 'test4charts.html', {})
 
 
-
 def home(request):
     return render(request, 'home.html', {})
 
