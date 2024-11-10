@@ -22,13 +22,18 @@
 <h1 class="title text-center">1-Day Chart</h1>
 
 </br>
-
+</br>
 
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
   <div class="d-flex justify-content-center">
-    <div class="col-9 mb-3 mb-sm-5">
-      <div class="tradingview-widget-container__widget"></div>
+
+    <div class="col-9 mb-3 mb-sm-5" style="border: 5px solid #eedb35; padding: 20px; border-radius: 8px; display: flex; flex-direction: column; justify-content: center; min-height: 300px;">
+      <div class="tradingview-widget-container__widget" style="flex-grow: 1;"></div>    
+
+
+    <!-- <div class="col-9 mb-3 mb-sm-5">
+      <div class="tradingview-widget-container__widget"></div> -->
       <script type="text/javascript"
         src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
           {
@@ -37,7 +42,7 @@
                 "height": "200%",
                   "locale": "en",
                     "dateRange": "1D",
-                      "colorTheme": "light",
+                      "colorTheme": "dark",
                         "isTransparent": false,
                           "autosize": true,
                             "largeChartUrl": ""
@@ -49,11 +54,6 @@
 
 </br>
 </br>
-</br>
-</br>
-</br>
-</br>
-
 
 
 {% endblock %}
