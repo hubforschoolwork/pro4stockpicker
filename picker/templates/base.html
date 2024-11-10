@@ -28,7 +28,7 @@
   /* Outer border container */
 .outer-border {
   border: 5px solid black; /* Black outer border */
-  padding: 10px; /* Space between the two borders */
+  padding: 0px; /* Space between the two borders */
   display: inline-block; /* Ensures the outer border wraps tightly around the inner container */
   border-radius: 8px; /* Optional: Adds rounded corners to the outer border */
 }
@@ -36,13 +36,10 @@
 /* Inner container with white border */
 .inner-border {
   border: 5px solid white; /* White inner border */
-  padding: 20px; /* Adds padding inside the white border */
+  padding: 0px; /* Adds padding inside the white border */
   border-radius: 8px; /* Optional: Adds rounded corners to the inner border */
 }
-
-  
-  
-  
+ 
   
   </style>
 
@@ -124,7 +121,7 @@
     <div class="col-9">
       <div class="tradingview-widget-container__widget"></div> -->
 
-      <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container"  style="flex-grow: 1;">
         <div class="d-flex justify-content-center">
           <!-- Outer border container -->
           <div class="outer-border">
