@@ -14,32 +14,29 @@
 
 <hr style="height: 5px; background-color: black; border: none;">
 
-<h5>Click on button to view current day stock data.</h5>
+<h5>Click on button to view current day's stock data.</h5>
+
 </br>
 
-
 <div class="container">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-12 mb-3 mb-sm-5">
-        <div class="card text-center border-black" style="width: span; height: 15rem;">
-          <h3 class="card-title mt-3">Current Portfolio</h3>
-          </br>
-          <p class="card-text">View current stock data for positions in your portfolio.</p>
-          </br>
-          <div class="card-body mb-3 mt-3"
-            style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 35px; text-align: center">
+  <div class="row">
+    <div class="row text-center">
+      <div class="col-6 mb-3 mb-sm-3">
+        <div class="card border-black" style="width: 35rem;">
+          <div class="card-body">
+            <h5 class="card-title">General Electric</h5>
+            <p class="card-text">Click on button for today's data.</p>
+            <a href="{% url 'stock_data_ge' %}" class="btn btn-danger border-black">Get Data</a>
+          </div>
+        </div>
+      </div>
 
-
-            <a href="{% url 'stock_data_amazon' %}" button type="submit"
-              class="btn btn-success btn-lg border-black">Amazon</button></a>
-            <a href="{% url 'stock_data_ge' %}" button type="submit" class="btn btn-success btn-lg border-black">General
-              Electric</button></a>
-            <a href="{% url 'stock_data_google' %}" button type="submit"
-              class="btn btn-success btn-lg border-black">Google</button></a>
-            <a href="{% url 'stock_data_microsoft' %}" button type="submit"
-              class="btn btn-success btn-lg border-black">Microsoft</button> </a>
-
+      <div class="col-6 mb-sm-8">
+        <div class="card border-black" style="width: 35rem;">
+          <div class="card-body">
+            <h5 class="card-title">Amazon</h5>
+            <p class="card-text">Click on button for today's data.</p>
+            <a href="{% url 'stock_data_amazon' %}" class="btn btn-danger border-black">Get Data</a>
           </div>
         </div>
       </div>
@@ -47,17 +44,43 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="row text-center">
+      <div class="col-6 mb-3 mb-sm-3">
+        <div class="card border-black" style="width: 35rem;">
+          <div class="card-body">
+            <h5 class="card-title">Google</h5>
+            <p class="card-text">Click on button for today's data.</p>
+            <a href="{% url 'stock_data_google' %}" class="btn btn-danger border-black">Get Data</a>
+          </div>
+        </div>
+      </div>
 
+
+      <div class="col-6 mb-sm-8">
+        <div class="card border-black" style="width: 35rem;">
+          <div class="card-body">
+            <h5 class="card-title">Microsoft</h5>
+            <p class="card-text">Click on button for today's data.</p>
+            <a href="{% url 'stock_data_microsoft' %}" class="btn btn-danger border-black">Get Data</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+</br>
+</br>
+</br>
 </br>
 </br>
 
 {% endblock %}
-
-
-
-
-
-
 
 
 
