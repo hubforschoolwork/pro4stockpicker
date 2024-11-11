@@ -24,25 +24,7 @@
           padding-bottom: 5px;
           box-sizing: border-box; /* Includes padding and border in overall width */
         }
-  
-  /* Outer border container */
-.outer-border {
-  border: 5px solid black; /* Black outer border */
-  padding: 0px; /* Space between the two borders */
-  display: inline-block; /* Ensures the outer border wraps tightly around the inner container */
-  border-radius: 8px; /* Optional: Adds rounded corners to the outer border */
-}
-
-/* Inner container with white border */
-.inner-border {
-  border: 5px solid white; /* White inner border */
-  padding: 0px; /* Adds padding inside the white border */
-  border-radius: 8px; /* Optional: Adds rounded corners to the inner border */
-}
- 
-  
   </style>
-
 
 </head>
 
@@ -116,20 +98,11 @@
 
  <!-- //start ticker here// -->
 
-<!-- <div class="tradingview-widget-container">
+<div class="tradingview-widget-container">
   <div class="d-flex justify-content-center">
-    <div class="col-9">
-      <div class="tradingview-widget-container__widget"></div> -->
-
-      <div class="tradingview-widget-container"  style="flex-grow: 1;">
-        <div class="d-flex justify-content-center">
-          <!-- Outer border container -->
-          <div class="outer-border">
-            <!-- Inner container with white border -->
-            <div class="col-9 inner-border">
-              <div class="tradingview-widget-container__widget" style="flex-grow: 1;"></div>
-             
-
+    <div class="col-9" style="border: 2px solid white; border-radius: 8px">
+      <div class="tradingview-widget-container__widget"></div>
+          
       <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
         async>
           {

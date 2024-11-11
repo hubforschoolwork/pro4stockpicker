@@ -11,8 +11,8 @@
   <a href="{% url 'home' %}" class="btn btn-success border-black">Go home</a>
 </div>
 
-<hr>
-<hr>
+
+<hr style="height: 5px; background-color: black; border: none;">
 
 <h5>Click on button to view current day stock data.</h5>
 </br>
@@ -29,9 +29,6 @@
           </br>
           <div class="card-body mb-3 mt-3"
             style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 35px; text-align: center">
-            <!-- <h5 class="card-title">Current Portfolio</h5>
-          </br>
-            <p class="card-text">View current stock data for positions in your portfolio.</p> -->
 
 
             <a href="{% url 'stock_data_amazon' %}" button type="submit"
