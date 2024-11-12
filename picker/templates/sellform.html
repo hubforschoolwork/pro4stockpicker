@@ -20,7 +20,7 @@
   <div class="container-fluid">
 
     <div class="row">
-      <div class="col-sm-12 mb-3 mb-sm-5">
+      <div class="col-sm-12 mb-3 mb-sm-5" style="border: 5px solid #eedb35; border-radius: 8px; padding: 20px;">
         <div class="card border-black" style="width: span;">
           <div class="card-body">
             <h3 class="card-title">Sell Transactions</h3>
@@ -83,7 +83,7 @@ function calculateRunningTotal() {
     document.getElementById('sell-running-total').textContent = `RUNNING TOTAL: $${totalSum.toFixed(2)}`;
 
     if (totalSum >= maxTotal &&!alertShown) {
-        alert("Maximum selling total reached. No more transactions will be processed.");
+        alert("Maximum selling total reached. No additional transactions will be processed.");
         alertShown = true;
     }
 
