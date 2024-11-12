@@ -61,7 +61,7 @@
 
 <script>
 
-function calculateRunningTotal() {
+  function calculateRunningTotal() {
     let totalSum = 0;
     const maxTotal = 5000;
     let alertShown = false;
@@ -70,42 +70,49 @@ function calculateRunningTotal() {
     const totals = document.querySelectorAll('.total');
 
     totals.forEach(total => {
-        const value = parseFloat(total.textContent.replace('$', '').replace(',', ''));
-        if (!isNaN(value)) {
-            if (totalSum + value <= maxTotal) {
-                totalSum += value;
-            } else {
-                totalSum = maxTotal;
-            }
+      const value = parseFloat(total.textContent.replace('$', '').replace(',', ''));
+      if (!isNaN(value)) {
+        if (totalSum + value <= maxTotal) {
+          totalSum += value;
+
+          total.style.color = '';  // Reset to default color if under limit*************
+
+        } else {
+
+          total.style.color = 'red';  // Change color to red if over limit*************
+
+          totalSum = maxTotal;
         }
+      }
     });
 
     document.getElementById('sell-running-total').textContent = `RUNNING TOTAL: $${totalSum.toFixed(2)}`;
 
-    if (totalSum >= maxTotal &&!alertShown) {
-        alert("Maximum selling total reached. No additional transactions will be processed.");
-        alertShown = true;
+    if (totalSum >= maxTotal && !alertShown) {
+      alert("Maximum selling total reached. No additional transactions will be processed.");
+      alertShown = true;
     }
 
-}
+  }
 
-window.addEventListener('DOMContentLoaded', (event) => {
+  window.addEventListener('DOMContentLoaded', (event) => {
     calculateRunningTotal();
-});
+  });
 
-document.getElementById('reset-button').addEventListener('click', function() {
+  document.getElementById('reset-button').addEventListener('click', function () {
     const tbody = document.querySelector('tbody');
-    
+
     tbody.innerHTML = '';
 
     document.getElementById('sell-running-total').textContent = 'RUNNING TOTAL: ';
 
     document.querySelectorAll(".total").forEach(function (total) {
-        total.textContent = "$0.00";
+      total.textContent = "$0.00";
+      total.style.color = '';  // Reset color on reset**************
     });
 
     rowsAdded.clear();
-});
+  });
 
 </script>
 
