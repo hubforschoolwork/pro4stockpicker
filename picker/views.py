@@ -4,7 +4,7 @@ from django.views.generic import ListView, CreateView, DeleteView
 
 
 from .models import AddPortfolio, DeletePortfolio, StockData, History, General
-from .forms import AddPortfolioForm, DeletePortfolioForm,StockDataForm,HistoryForm
+from .forms import AddPortfolioForm, DeletePortfolioForm, StockDataForm, HistoryForm
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
@@ -52,15 +52,6 @@ def display_sells(request):
     # return render(request, 'add_portfolio.html')
 
 
-
-
-def test(request):
-    return render(request, 'test.html', {})
-
-def test4charts(request):
-    return render(request, 'test4charts.html', {})
-
-
 def home(request):
     return render(request, 'home.html', {})
 
@@ -102,7 +93,6 @@ def stock_data_google(request):
 
 def stock_data_microsoft(request):
     return render(request, 'stock_data_microsoft.html', {})
-
 
 
 class Stock_Data_AmazonView(CreateView):
