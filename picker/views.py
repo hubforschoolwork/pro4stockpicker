@@ -1,5 +1,4 @@
 from django.views.generic import ListView, CreateView, DeleteView
-
 # from picker.templatetags.custom_filters import extract_number
 
 
@@ -93,6 +92,9 @@ def stock_data_google(request):
 
 def stock_data_microsoft(request):
     return render(request, 'stock_data_microsoft.html', {})
+
+
+# // **************************************************************************** //
 
 
 class Stock_Data_AmazonView(CreateView):
