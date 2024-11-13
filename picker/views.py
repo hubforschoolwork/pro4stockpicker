@@ -63,6 +63,15 @@ def historical_data(request):
 def stock_data(request):
     return render(request, 'stock_data.html', {})
 
+
+
+def add_portfolio(request):
+    return render(request, 'add_portfolio.html', {})
+
+
+
+
+
 def delete_portfolio(request):
     return render(request, 'delete_portfolio.html', {})
 
@@ -127,11 +136,11 @@ def stock_data_microsoft(request):
 #     template_name = 'general.html'
 #     # fields = '__all__'
 
-# class AddPortfolioView(CreateView):
-#     model = AddPortfolio
-#     form_class = AddPortfolioForm
-#     template_name = 'add_portfolio.html'
-#     # fields = '__all__'
+class AddPortfolioView(CreateView):
+    # model = AddPortfolio
+    # form_class = AddPortfolioForm
+    template_name = 'add_portfolio.html'
+    # fields = '__all__'
 
 # class DeletePortfolioView(CreateView):
 #     model = DeletePortfolio
