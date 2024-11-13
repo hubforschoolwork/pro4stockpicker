@@ -2,8 +2,8 @@ from django.views.generic import ListView, CreateView, DeleteView
 # from picker.templatetags.custom_filters import extract_number
 
 
-from .models import AddPortfolio, DeletePortfolio, StockData, History, General
-from .forms import AddPortfolioForm, DeletePortfolioForm, StockDataForm, HistoryForm
+# from .models import AddPortfolio, DeletePortfolio, StockData, History, General
+# from .forms import AddPortfolioForm, DeletePortfolioForm, StockDataForm, HistoryForm
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
