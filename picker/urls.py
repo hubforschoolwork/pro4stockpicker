@@ -21,7 +21,7 @@ urlpatterns = [
     path('stock_data_google', views.stock_data_google, name='stock_data_google'),
     path('stock_data_microsoft', views.stock_data_microsoft, name='stock_data_microsoft'),
     path('display_selection/', display_selection, name='display_selection'),
-    path('display_sells/', display_sells, name='display_sells'),
+    # path('display_sells/', display_sells, name='display_sells'),
     path('sellform', sellform, name='sellform'),
 ]
 

@@ -97,57 +97,57 @@ def stock_data_microsoft(request):
 # // **************************************************************************** //
 
 
-class Stock_Data_AmazonView(CreateView):
-    # model = General
-    # form_class = AboutForm
-    template_name = 'stock_data_amazon.html'
-    # fields = '__all__'
+# class Stock_Data_AmazonView(CreateView):
+#     # model = General
+#     # form_class = AboutForm
+#     template_name = 'stock_data_amazon.html'
+#     # fields = '__all__'
 
-class MicrosoftView(CreateView):
-    # model = General
-    # form_class = AboutForm
-    template_name = 'microsoft.html'
-    # fields = '__all__'
+# class MicrosoftView(CreateView):
+#     # model = General
+#     # form_class = AboutForm
+#     template_name = 'microsoft.html'
+#     # fields = '__all__'
 
-class GoogleView(CreateView):
-    model = General
-    # form_class = AboutForm
-    template_name = 'google.html'
-    # fields = '__all__'
+# class GoogleView(CreateView):
+#     model = General
+#     # form_class = AboutForm
+#     template_name = 'google.html'
+#     # fields = '__all__'
 
-class AmazonView(CreateView):
-    # model = General
-    # form_class = AboutForm
-    template_name = 'amazon.html'
-    # fields = '__all__'
+# class AmazonView(CreateView):
+#     # model = General
+#     # form_class = AboutForm
+#     template_name = 'amazon.html'
+#     # fields = '__all__'
 
-class GeneralView(CreateView):
-    model = General
-    # form_class = AboutForm
-    template_name = 'general.html'
-    # fields = '__all__'
+# class GeneralView(CreateView):
+#     model = General
+#     # form_class = AboutForm
+#     template_name = 'general.html'
+#     # fields = '__all__'
 
-class AddPortfolioView(CreateView):
-    model = AddPortfolio
-    form_class = AddPortfolioForm
-    template_name = 'add_portfolio.html'
-    # fields = '__all__'
+# class AddPortfolioView(CreateView):
+#     model = AddPortfolio
+#     form_class = AddPortfolioForm
+#     template_name = 'add_portfolio.html'
+#     # fields = '__all__'
 
-class DeletePortfolioView(CreateView):
-    model = DeletePortfolio
-    form_class = DeletePortfolioForm
-    template_name = 'delete_portfolio.html'
-    # fields = '__all__'
+# class DeletePortfolioView(CreateView):
+#     model = DeletePortfolio
+#     form_class = DeletePortfolioForm
+#     template_name = 'delete_portfolio.html'
+#     # fields = '__all__'
 
-class HistoryView(CreateView):
-    model = History
-    form_class = HistoryForm
-    template_name = 'historical_data.html'
-    # fields = '__all__'
+# class HistoryView(CreateView):
+#     model = History
+#     form_class = HistoryForm
+#     template_name = 'historical_data.html'
+#     # fields = '__all__'
 
-class StockDataView(CreateView):
-    model = StockData
-    form_class = StockDataForm
-    template_name = 'stock_data.html'
-    # fields = 'stock'
+# class StockDataView(CreateView):
+#     model = StockData
+#     form_class = StockDataForm
+#     template_name = 'stock_data.html'
+#     # fields = 'stock'
 
