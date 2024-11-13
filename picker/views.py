@@ -142,21 +142,21 @@ class AddPortfolioView(CreateView):
     template_name = 'add_portfolio.html'
     # fields = '__all__'
 
-# class DeletePortfolioView(CreateView):
-#     model = DeletePortfolio
-#     form_class = DeletePortfolioForm
-#     template_name = 'delete_portfolio.html'
-#     # fields = '__all__'
+class DeletePortfolioView(CreateView):
+    # model = DeletePortfolio
+    # form_class = DeletePortfolioForm
+    template_name = 'delete_portfolio.html'
+    # fields = '__all__'
 
-# class HistoryView(CreateView):
-#     model = History
-#     form_class = HistoryForm
-#     template_name = 'historical_data.html'
-#     # fields = '__all__'
+class HistoryView(CreateView):
+    # model = History
+    # form_class = HistoryForm
+    template_name = 'historical_data.html'
+    # fields = '__all__'
 
-# class StockDataView(CreateView):
-#     model = StockData
-#     form_class = StockDataForm
-#     template_name = 'stock_data.html'
-#     # fields = 'stock'
+class StockDataView(CreateView):
+    # model = StockData
+    # form_class = StockDataForm
+    template_name = 'stock_data.html'
+    # fields = 'stock'
 
