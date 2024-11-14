@@ -1,15 +1,15 @@
 from django.urls import path
 from . import views
-from .views import AddPortfolioView, DeletePortfolioView, HistoryView, StockDataView, GeneralView, AmazonView, MicrosoftView, GoogleView, Stock_Data_AmazonView, display_selection
+from .views import AddPortfolioView, DeletePortfolioView, HistoryView, StockDataView, GeneralView, AmazonView, MicrosoftView, GoogleView, Stock_Data_AmazonView, add_portfolio, delete_portfolio, historical_data, stock_data
 from .views import display_selection, display_sells, sellform
 
 
 urlpatterns = [
     path('', views.home, name="home"),
-    path('stock_data', StockDataView.as_view(), name='stock_data'),
-    path('historical_data', HistoryView.as_view(), name='historical_data'),
-    path('add_portfolio', AddPortfolioView.as_view(), name='add_portfolio'),
-    path('delete_portfolio', DeletePortfolioView.as_view(), name='delete_portfolio'),
+    # path('stock_data', StockDataView.as_view(), name='stock_data'),
+    # path('historical_data', HistoryView.as_view(), name='historical_data'),
+    # path('add_portfolio', AddPortfolioView.as_view(), name='add_portfolio'),
+    # path('delete_portfolio', DeletePortfolioView.as_view(), name='delete_portfolio'),
     path('registrationform', views.registrationform, name='registrationform'),
     path('general', views.general, name='general'),
     path('amazon', views.amazon, name='amazon'),
@@ -22,6 +22,13 @@ urlpatterns = [
     path('display_selection/', display_selection, name='display_selection'),
     path('display_sells/', display_sells, name='display_sells'),
     path('sellform', sellform, name='sellform'),
+
+    path('stock_data', stock_data, name='stock_data'),
+    path('historical_data', historical_data, name='historical_data'),
+    path('add_portfolio', add_portfolio, name='add_portfolio'),
+    path('delete_portfolio', delete_portfolio, name='delete_portfolio'),
+
+
 ]
 
 
