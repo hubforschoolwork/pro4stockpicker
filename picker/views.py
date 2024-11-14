@@ -1,4 +1,4 @@
-from django.views.generic import ListView, CreateView, DeleteView
+# from django.views.generic import ListView, CreateView, DeleteView
 # from picker.templatetags.custom_filters import extract_number
 
 
