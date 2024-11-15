@@ -1,9 +1,6 @@
 # from django.views.generic import ListView, CreateView, DeleteView
 # from picker.templatetags.custom_filters import extract_number
 
-
-# from .models import AddPortfolio, DeletePortfolio, StockData, History, General
-# from .forms import AddPortfolioForm, DeletePortfolioForm, StockDataForm, HistoryForm
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
@@ -66,7 +63,6 @@ def stock_data(request):
 def add_portfolio(request):
     return render(request, 'add_portfolio.html', {})
 
-
 def delete_portfolio(request):
     return render(request, 'delete_portfolio.html', {})
 
@@ -96,62 +92,4 @@ def stock_data_google(request):
 
 def stock_data_microsoft(request):
     return render(request, 'stock_data_microsoft.html', {})
-
-
-# // **************************************************************************** //
-
-
-# class Stock_Data_AmazonView(CreateView):
-#     # model = General
-#     # form_class = AboutForm
-#     template_name = 'stock_data_amazon.html'
-#     # fields = '__all__'
-
-# class MicrosoftView(CreateView):
-#     # model = General
-#     # form_class = AboutForm
-#     template_name = 'microsoft.html'
-#     # fields = '__all__'
-
-# class GoogleView(CreateView):
-#     # model = General
-#     # form_class = AboutForm
-#     template_name = 'google.html'
-#     # fields = '__all__'
-
-# class AmazonView(CreateView):
-#     # model = General
-#     # form_class = AboutForm
-#     template_name = 'amazon.html'
-#     # fields = '__all__'
-
-# class GeneralView(CreateView):
-#     # model = General
-#     # form_class = AboutForm
-#     template_name = 'general.html'
-#     # fields = '__all__'
-
-# class AddPortfolioView(CreateView):
-#     model = AddPortfolio
-#     # form_class = AddPortfolioForm
-#     template_name = 'add_portfolio.html'
-#     # fields = '__all__'
-
-# class DeletePortfolioView(CreateView):
-#     model = DeletePortfolio
-#     # form_class = DeletePortfolioForm
-#     template_name = 'delete_portfolio.html'
-#     # fields = '__all__'
-
-# class HistoryView(CreateView):
-#     model = History
-#     # form_class = HistoryForm
-#     template_name = 'historical_data.html'
-#     # fields = '__all__'
-
-# class StockDataView(CreateView):
-#     model = StockData
-#     # form_class = StockDataForm
-#     template_name = 'stock_data.html'
-#     # fields = 'stock'
 
