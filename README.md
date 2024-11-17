@@ -4,10 +4,11 @@ Readme File
 •	Through current and historical stock data, users can assess a stock’s performance.
 •	Stock data, stock tickers and charts are in real time.  Historical data is presented in a 5-year chart.
 •	Buy and sell features allow users to pick stocks from among the following list which includes pre-populated sample data for price/quantity amounts via a dropdown selection menu:
-o	Google
-o	General Electric
-o	Microsoft
-o	Amazon
+
+  o	Google
+  o	General Electric
+  o	Microsoft
+  o	Amazon
 
 •	A preset limit of $5,000 has been included to purchase stocks. 
 •	A preset limit of $5,000 has been included to sell stocks.
@@ -39,7 +40,7 @@ o	Allow a single user to add more than one portfolio to their account.
 
 ******************get django start-up steps for Powershell.
 Cloning and starting application
-git clone https://github.com/divanov11/notes-app
+git clone 
 o	cd notes-app
 o	npm install
 o	npm run server //STARTS JSON SERVER ON PORT 5000
