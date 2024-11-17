@@ -1,4 +1,4 @@
-Readme File
+
 
 •	This basic app offers users a straightforward approach to gain familiarity with navigating a stock trading platform.
 •	Through current and historical stock data, users can assess a stock’s performance.
