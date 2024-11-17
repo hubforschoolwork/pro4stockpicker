@@ -1,4 +1,5 @@
 
+Stock Picker
 
 •	This basic app offers users a straightforward approach to gain familiarity with navigating a stock trading platform.
 •	Through current and historical stock data, users can assess a stock’s performance.
@@ -17,24 +18,23 @@
 •	Once the transactions (buy/sell) reach the $5,000 limit, all further transactions will not be processed.  An alert will appear on the screen and the transactions above the allowable limit will appear in “red” as a signal to show these transactions will not be processed.
 
 •	Technologies used are:
-o	Django/Python
-o	.CSS
-o	HTML
-o	JavaScript
-o	Bootstrap
-o	TradingView – For stock prices/graphs and stock ticker widgets
+  o	Django/Python
+  o	.CSS
+  o	HTML
+  o	JavaScript
+  o	Bootstrap
+  o	TradingView – For stock prices/graphs and stock ticker widgets
 
 
-
-•	Suggested future enhancements to the app are as follows:
-o	Expanded access to all securities on all stock exchanges rather than limited to four stocks.
-o	Buy and sell pages could be expanded to allow for access to all securities on all stock exchanges.
-o	Expanded securities would require views of all stock data/charts/historical data.
-o	Stock price alerts allowing users to purchase or sell a stock at a particular price.
-o	Portfolio stock positions/balances on homepage.
-o	Search box to get instant quotes on all stock on exchanges.
-o	Add a login feature so users can save their portfolios.
-o	Allow a single user to add more than one portfolio to their account.
+Suggested Future Enhancements:
+  o	Expanded access to all securities on all stock exchanges rather than limited to four stocks.
+  o	Buy and sell pages could be expanded to allow for access to all securities on all stock exchanges.
+  o	Expanded securities would require views of all stock data/charts/historical data.
+  o	Stock price alerts allowing users to purchase or sell a stock at a particular price.
+  o	Portfolio stock positions/balances on homepage.
+  o	Search box to get instant quotes on all stock on exchanges.
+  o	Add a login feature so users can save their portfolios.
+  o	Allow a single user to add more than one portfolio to their account.
 
 
 
