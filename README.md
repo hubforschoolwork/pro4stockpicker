@@ -18,6 +18,7 @@
 # Technologies Used
 
 -	Django
+-	Python
 -	CSS
 -	HTML
 -	JavaScript
